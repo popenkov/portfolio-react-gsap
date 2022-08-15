@@ -1,4 +1,4 @@
-import React from 'react';
+import { useRef, useEffect } from 'react';
 import './Home.css';
 import Header from '../Header/Header';
 import flower from '../Assets/flower.svg';
@@ -7,23 +7,52 @@ import arrow from '../Assets/arrow.svg';
 import { Link } from 'react-router-dom';
 import GetInTouch from '../GetInTouch/GetInTouch';
 import Footer from '../Footer/Footer';
+import gsap from 'gsap';
+
 function Home() {
+  let text1 = useRef(null);
+  let text2 = useRef(null);
+  let text3 = useRef(null);
+  let text4 = useRef(null);
+  let p1 = useRef(null);
+
+  const timeline_home = gsap.timeline();
+  useEffect(() => {
+    timeline_home.from(
+      [text1, text2, text3, text4],
+      {
+        duration: 1,
+        skewY: 15,
+        y: 400,
+        stagger: {
+          amount: 0.2,
+        },
+      },
+      '-=1.2'
+    );
+    timeline_home.from(p1, {
+      duration: 0.6,
+      x: -100,
+      delay: 0.2,
+      opacity: 0,
+    });
+  });
   return (
     <div className="home">
       <Header />
       <div className="container">
         <div className="container1">
           <div className="txt-line" id="anton">
-            <p>Anton</p>
+            <p ref={(el) => (text1 = el)}>Anton</p>
           </div>
           <div className="txt-line line-bottom" id="popenkov">
-            <p>Popenkov</p>
+            <p ref={(el) => (text2 = el)}>Popenkov</p>
           </div>
         </div>
         <div></div>
       </div>
       <div className="left-side-quote">
-        <p>
+        <p ref={(el) => (p1 = el)}>
           I create didgital experiences that merge art <br /> direction,
           branding, creative strategy, web <br /> design, prototyping, and
           digital interactions.
@@ -32,11 +61,11 @@ function Home() {
       <div className="container">
         <div></div>
         <div className="container1">
-          <div className="txt-line" id="digital">
-            <p>Frontend</p>
+          <div className="txt-line" id="frontend">
+            <p ref={(el) => (text3 = el)}>Frontend</p>
           </div>
-          <div className="txt-line line-bottom" id="designer">
-            <p>Developer</p>
+          <div className="txt-line line-bottom" id="developer">
+            <p ref={(el) => (text4 = el)}>Developer</p>
           </div>
         </div>
       </div>

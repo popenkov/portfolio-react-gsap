@@ -25,9 +25,7 @@ const Header = () => {
   return (
     <div>
       <header className={styles.header}>
-        <div id="logo" className={styles.logo}>
-          {'<Popenkov/>'}
-        </div>
+        <div id="logo" className={styles.logo}></div>
         <div className={styles.toggleMenu}>
           <img src={MenuIcon} alt="" />
         </div>
