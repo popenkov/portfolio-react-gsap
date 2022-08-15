@@ -36,7 +36,7 @@
   left: 50%;
   transform: translate(-50%, -50%);
   width: 50vw;
-  background: url(../Assets/image.jpeg) 50% 50% no-repeat;
+  /* background: url(../Assets/image.jpeg) 50% 50% no-repeat; */
   background-size: cover;
   filter: grayscale(1);
   height: 110vh;

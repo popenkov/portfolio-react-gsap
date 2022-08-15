@@ -1,0 +1,73 @@
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 45vw;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translate3d(calc(-25% + 1rem), 0, 0);
+  }
+
+  100% {
+    transform: translate3d(calc(-50% + 1rem), 0, 0);
+  }
+}
+
+.animationBtn {
+  height: 48px;
+  margin: 0.35vw 0.25vw;
+  background-color: transparent;
+  line-height: 47px;
+  user-select: none;
+  text-align: center;
+  overflow: hidden;
+
+  border: 1px solid #c0c9df;
+  position: relative;
+  display: inline-block;
+  font-size: 2.125rem;
+  text-transform: uppercase;
+  border-radius: 24px;
+  padding: 0 1rem;
+  color: #c0c9df;
+  transition: cubic-bezier(0.215, 0.61, 0.355, 1) 0.4s all;
+
+  &:hover > span {
+    opacity: 0;
+  }
+
+  &:hover .marqueeInner {
+    opacity: 1;
+  }
+}
+
+.marquee {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.marqueeInner {
+  opacity: 0;
+  animation: marquee 3s linear infinite;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  display: flex;
+  position: relative;
+  transform: translate3d(-25%, 0, 0);
+  transition: opacity 0.1s;
+  text-transform: uppercase;
+}
+
+.marquee .marqueeInner span {
+  white-space: nowrap;
+  position: relative;
+  padding: 0 0.5rem;
+  display: flex;
+  align-items: center;
+}

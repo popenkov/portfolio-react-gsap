@@ -43,11 +43,11 @@
   text-transform: uppercase;
   font-size: 20px;
   overflow: hidden;
-  color: black;
+  color: #c0c9df;
   text-decoration: none;
   cursor: pointer;
   margin-left: 20px;
-  mix-blend-mode: difference;
+  /* mix-blend-mode: difference; */
 }
 .menuItemLink:hover::before {
   opacity: 1;
@@ -83,20 +83,20 @@
 @media (max-width: 768px) {
   .menuItems {
     display: none;
-    background-color: #161616;
+    background-color: #c0c9df;
     top: 80px;
     right: 20px;
     padding: 10px 0px;
   }
   .menuItem,
   .menuItemLink {
-    color: #f0f0f0;
+    color: #c0c9df;
     font-size: 15px;
     padding-right: 10px;
     padding-bottom: 2px;
   }
   .menuItemLink::before {
-    background-color: #f0f0f0;
+    background-color: #c0c9df;
   }
   .toggleMenu {
     display: block;

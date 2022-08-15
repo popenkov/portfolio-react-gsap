@@ -8,6 +8,7 @@ import { Link } from 'react-router-dom';
 import GetInTouch from '../GetInTouch/GetInTouch';
 import Footer from '../Footer/Footer';
 import gsap from 'gsap';
+import Skills from '../components/Skills/Skills';
 
 function Home() {
   let text1 = useRef(null);
@@ -103,6 +104,7 @@ function Home() {
           <div className="reel-item">&nbsp; -- My skills</div>
           <div className="reel-item">&nbsp; -- My skills</div>
         </div>
+        <Skills />
         <div className="skill-set-boxes">
           <div className="skill-set-box">
             <h1 className="skill-set-box-h1">HTML5</h1>
