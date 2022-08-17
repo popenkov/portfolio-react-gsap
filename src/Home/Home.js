@@ -9,6 +9,7 @@ import GetInTouch from '../GetInTouch/GetInTouch';
 import Footer from '../Footer/Footer';
 import gsap from 'gsap';
 import Skills from '../components/Skills/Skills';
+import Navigation from '../components/Navigation/Navigation';
 
 function Home() {
   let text1 = useRef(null);
