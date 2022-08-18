@@ -55,14 +55,13 @@ function About() {
                 <p ref={(el) => (text2 = el)}>Popenkov</p>
               </div>
             </div>
-            <di
+            <div
               ref={(el) => (p1 = el)}
-              v
               className="container-quote container-quote1"
             >
               I create sites and <br /> applications that cause <br /> pleasant
               emotions
-            </di>
+            </div>
             <div className="container-quote container-quote2">
               I specialize in interaction <br /> design, experience websites{' '}
               <br /> and applications
