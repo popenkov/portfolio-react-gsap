@@ -32,26 +32,26 @@ function Navigation({ isOpen, onClose }) {
   useEffect(() => {
     tl.to(menu, {
       duration: 1,
-      x: '0%',
+      // x: '0%',
       ease: Expo.easeInOut,
     });
     tl.fromTo(
       [li1, li2, li3, li4],
       {
-        y: '-100%',
+        // y: '-100%',
         opacity: 0,
       },
       {
         duration: 0.5,
         opacity: 1,
-        y: '0%',
+        // y: '0%',
         stagger: 0.25,
       }
     );
     tl.fromTo(
       [social1, social2, social3],
       {
-        y: '-50%',
+        // y: '-50%',
         opacity: 0,
       },
       {
