@@ -1,10 +1,12 @@
 import gsap from 'gsap';
-import { useRef, useEffect, useState } from 'react';
+import { useRef, useEffect, useState, createContext, useContext } from 'react';
 import styles from './Header.module.scss';
 import { Link } from 'react-router-dom';
 import MenuIcon from '../Assets/menu.svg';
 import Navigation from '../components/Navigation/Navigation';
+
 const Header = () => {
+  // const [isOpen, setIsOpen] = useNavigation();
   const [isModalOpen, setIsModalOpen] = useState(false);
   let li1 = useRef(null);
   let li2 = useRef(null);
@@ -18,7 +20,7 @@ const Header = () => {
   };
   const closeModal = () => {
     console.log('click');
-    setIsModalOpen(true);
+    setIsModalOpen(false);
   };
 
   const timeline = gsap.timeline();
