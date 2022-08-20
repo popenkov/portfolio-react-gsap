@@ -15,44 +15,48 @@ function Navigation({ isOpen, onClose }) {
   let social2 = useRef(null);
   let social3 = useRef(null);
 
-  const tl_popup = useRef(gsap.timeline({ paused: true }));
+  const tl_popup = useRef();
 
   useEffect(() => {
-    tl_popup.current.to(menu, {
-      duration: 1,
-      x: '0%',
-      ease: Expo.easeInOut,
-    });
-    tl_popup.current.fromTo(
-      [li1, li2, li3, li4],
-      {
-        y: '-100%',
-        autoAlpha: 0,
-      },
-      {
-        duration: 0.5,
-        autoAlpha: 1,
-        y: '0%',
-        stagger: 0.25,
-      }
-    );
-    tl_popup.current.fromTo(
-      [social1, social2, social3],
-      0.5,
-      {
-        y: '-50%',
-        autoAlpha: 0,
-      },
-      {
-        duration: 0.8,
-        autoAlpha: 1,
-        stagger: 0.25,
-        ease: Expo.easeOut,
-      }
-    );
+    tl_popup.current = gsap
+      .timeline({ paused: true })
+      .to(menu, {
+        duration: 1,
+        x: '0%',
+        ease: Expo.easeInOut,
+      })
+      .fromTo(
+        [li1, li2, li3, li4],
+        {
+          y: '-100%',
+          autoAlpha: 0,
+        },
+        {
+          duration: 0.5,
+          autoAlpha: 1,
+          y: '0%',
+          stagger: 0.25,
+        }
+      )
+      .fromTo(
+        [social1, social2, social3],
+        0.5,
+        {
+          y: '-50%',
+          autoAlpha: 0,
+        },
+        {
+          duration: 0.8,
+          autoAlpha: 1,
+          stagger: 0.25,
+          ease: Expo.easeOut,
+        }
+      );
   }, []);
 
   useEffect(() => {
+    console.log('isOpenUseEffect');
+    tl_popup.current.reversed(!isOpen);
     if (isOpen) {
       openMenu();
     } else {
