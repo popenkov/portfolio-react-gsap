@@ -21,8 +21,8 @@ function About() {
         stagger: {
           amount: 0.4,
         },
-      },
-      '-=.5'
+      }
+      // '-=.5'
     );
     timeline_about.from(
       image,

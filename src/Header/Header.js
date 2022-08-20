@@ -15,11 +15,9 @@ const Header = () => {
   let li5 = useRef(null);
 
   const openModal = () => {
-    console.log('click');
     setIsModalOpen(true);
   };
   const closeModal = () => {
-    console.log('click');
     setIsModalOpen(false);
   };
 

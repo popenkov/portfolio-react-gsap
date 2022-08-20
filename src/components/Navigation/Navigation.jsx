@@ -6,16 +6,6 @@ import styles from './Navigation.module.scss';
 
 //
 function Navigation({ isOpen, onClose }) {
-  // const [isOpen, setIsOpen] = useNavigation();
-  useEffect(() => {
-    tl.play();
-
-    if (isOpen) {
-      openMenu();
-    } else {
-      closeMenu();
-    }
-  }, [isOpen]);
   let menu = useRef(null);
   let li1 = useRef(null);
   let li2 = useRef(null);
@@ -24,56 +14,59 @@ function Navigation({ isOpen, onClose }) {
   let social1 = useRef(null);
   let social2 = useRef(null);
   let social3 = useRef(null);
-  let social4 = useRef(null);
-  const [isMounted, setIsMounted] = useState(false);
-  const tl = gsap.timeline({
-    paused: 'true',
-  });
+
+  const tl_popup = useRef(gsap.timeline({ paused: true }));
+
   useEffect(() => {
-    tl.to(menu, {
+    tl_popup.current.to(menu, {
       duration: 1,
-      // x: '0%',
+      x: '0%',
       ease: Expo.easeInOut,
     });
-    tl.fromTo(
+    tl_popup.current.fromTo(
       [li1, li2, li3, li4],
       {
-        // y: '-100%',
-        opacity: 0,
+        y: '-100%',
+        autoAlpha: 0,
       },
       {
         duration: 0.5,
-        opacity: 1,
-        // y: '0%',
+        autoAlpha: 1,
+        y: '0%',
         stagger: 0.25,
       }
     );
-    tl.fromTo(
+    tl_popup.current.fromTo(
       [social1, social2, social3],
+      0.5,
       {
-        // y: '-50%',
-        opacity: 0,
+        y: '-50%',
+        autoAlpha: 0,
       },
       {
         duration: 0.8,
-        opacity: 1,
+        autoAlpha: 1,
         stagger: 0.25,
         ease: Expo.easeOut,
-      },
-      '-=0.5'
+      }
     );
   }, []);
 
+  useEffect(() => {
+    if (isOpen) {
+      openMenu();
+    } else {
+      closeMenu();
+    }
+  }, [isOpen]);
+
   const openMenu = () => {
-    console.log('open menu');
-    tl.play();
+    tl_popup.current.play();
   };
   const closeMenu = () => {
-    console.log('closeMenu');
-    tl.reverse();
+    tl_popup.current.reverse();
   };
 
-  if (!isOpen) return null;
   return ReactDOM.createPortal(
     <div ref={(el) => (menu = el)} className={styles.menu}>
       <div className={styles.button} onClick={onClose}>
