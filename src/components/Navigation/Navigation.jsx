@@ -72,54 +72,58 @@ function Navigation({ isOpen, onClose }) {
   };
 
   return ReactDOM.createPortal(
-    <div ref={(el) => (menu = el)} className={styles.menu}>
-      <div className={styles.button} onClick={onClose}>
-        X
+    <>
+      {/* <div className={styles.noise}></div> */}
+
+      <div ref={(el) => (menu = el)} className={styles.menu}>
+        <div className={styles.button} onClick={onClose}>
+          X
+        </div>
+        <nav>
+          <ul className={styles.navigationList}>
+            <li ref={(el) => (li1 = el)} className={styles.navigationItem}>
+              <Link to="#" className={styles.navigationLink}>
+                Home
+              </Link>
+            </li>
+            <li ref={(el) => (li2 = el)} className={styles.navigationItem}>
+              <Link to="#" className={styles.navigationLink}>
+                About
+              </Link>
+            </li>
+            <li ref={(el) => (li3 = el)} className={styles.navigationItem}>
+              <Link to="#" className={styles.navigationLink}>
+                Services
+              </Link>
+            </li>
+            <li ref={(el) => (li4 = el)} className={styles.navigationItem}>
+              <Link to="#" className={styles.navigationLink}>
+                Contact
+              </Link>
+            </li>
+          </ul>
+        </nav>
+        <div className={styles.social}>
+          <ul className={styles.socialList}>
+            <li ref={(el) => (social1 = el)} className={styles.socialItem}>
+              <a href="#" className={styles.socialLink}>
+                facebook
+              </a>
+            </li>
+            <li ref={(el) => (social2 = el)} className={styles.socialItem}>
+              <a href="#" className={styles.socialLink}>
+                instagram
+              </a>
+            </li>
+            <li ref={(el) => (social3 = el)} className={styles.socialItem}>
+              <a href="#" className={styles.socialLink}>
+                twitter
+              </a>
+            </li>
+          </ul>
+        </div>
       </div>
-      <nav>
-        <ul className={styles.navigationList}>
-          <li ref={(el) => (li1 = el)} className={styles.navigationItem}>
-            <Link to="#" className={styles.navigationLink}>
-              Home
-            </Link>
-          </li>
-          <li ref={(el) => (li2 = el)} className={styles.navigationItem}>
-            <Link to="#" className={styles.navigationLink}>
-              About
-            </Link>
-          </li>
-          <li ref={(el) => (li3 = el)} className={styles.navigationItem}>
-            <Link to="#" className={styles.navigationLink}>
-              Services
-            </Link>
-          </li>
-          <li ref={(el) => (li4 = el)} className={styles.navigationItem}>
-            <Link to="#" className={styles.navigationLink}>
-              Contact
-            </Link>
-          </li>
-        </ul>
-      </nav>
-      <div className={styles.social}>
-        <ul className={styles.socialList}>
-          <li ref={(el) => (social1 = el)} className={styles.socialItem}>
-            <a href="#" className={styles.socialLink}>
-              facebook
-            </a>
-          </li>
-          <li ref={(el) => (social2 = el)} className={styles.socialItem}>
-            <a href="#" className={styles.socialLink}>
-              instagram
-            </a>
-          </li>
-          <li ref={(el) => (social3 = el)} className={styles.socialItem}>
-            <a href="#" className={styles.socialLink}>
-              twitter
-            </a>
-          </li>
-        </ul>
-      </div>
-    </div>,
+    </>,
     document.body
   );
 }

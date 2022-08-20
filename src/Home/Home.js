@@ -18,7 +18,7 @@ function Home() {
   let text4 = useRef(null);
   let p1 = useRef(null);
 
-  const timeline_home = gsap.timeline();
+  const timeline_home = gsap.timeline({ delay: 4 });
   useEffect(() => {
     timeline_home.from(
       [text1, text2, text3, text4],
@@ -53,9 +53,10 @@ function Home() {
         </div>
         <div></div>
       </div>
+
       <div className="left-side-quote">
         <p ref={(el) => (p1 = el)}>
-          I create didgital experiences that merge art <br /> direction,
+          I create digital experiences that merge art <br /> direction,
           branding, creative strategy, web <br /> design, prototyping, and
           digital interactions.
         </p>
