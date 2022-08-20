@@ -21,7 +21,7 @@ const Header = () => {
     setIsModalOpen(false);
   };
 
-  const timeline = gsap.timeline({ delay: 3 });
+  const timeline = gsap.timeline();
   useEffect(() => {
     timeline.from([li1, li2, li3, li4, li5], {
       opacity: 0,

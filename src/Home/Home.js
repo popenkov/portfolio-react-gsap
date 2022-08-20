@@ -18,7 +18,7 @@ function Home() {
   let text4 = useRef(null);
   let p1 = useRef(null);
 
-  const timeline_home = gsap.timeline({ delay: 4 });
+  const timeline_home = gsap.timeline();
   useEffect(() => {
     timeline_home.from(
       [text1, text2, text3, text4],
