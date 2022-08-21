@@ -9,7 +9,7 @@
   width: 100%;
   margin-top: -80px;
 }
-.container1 {
+.nameWrapper {
   display: flex;
   flex-direction: column;
   padding: 0px 100px;
@@ -17,10 +17,10 @@
   justify-content: center;
   overflow: hidden;
 }
-.txt-line {
+.nameParagraph {
   overflow: hidden;
 }
-.txt-line p {
+.nameParagraph p {
   font-size: 180px;
   text-transform: capitalize;
   letter-spacing: -10px;
@@ -30,7 +30,7 @@
   line-height: 90%;
   line-height: 150%;
 }
-.line-bottom {
+.nameParagraphBottom {
   margin-top: -130px;
 }
 .right-side-menu {
@@ -46,26 +46,26 @@
   cursor: pointer;
   font-weight: lighter;
 }
-.left-side-quote {
+.leftQuote {
   margin-left: 120px;
 }
-.left-side-quote p {
-  color: black;
+.leftQuote p {
+  color: #642420;
   font-size: 15px;
   font-family: 'Inter';
   word-spacing: 10px;
   text-transform: uppercase;
   font-weight: 300;
 }
-.flower-svg {
+.flower {
   margin-left: 150px;
   margin-top: -250px;
 }
-.flower-svg img {
+.flower img {
   animation: animate-rotate 30s infinite linear;
   width: 80px;
 }
-.short-about {
+.about {
   margin-top: 25vh;
   display: flex;
   align-items: center;
@@ -73,13 +73,13 @@
   justify-content: space-between;
   flex-direction: column;
 }
-.main-h1-short-about {
+.aboutHeader {
   margin-top: 100px;
 }
-.sub-main-p-short-about {
+.aboutTextContainer {
   margin-top: 120px;
 }
-.short-about h1 {
+.about h1 {
   font-size: 150px;
   font-weight: 500;
   font-family: 'Ogg';
@@ -87,7 +87,7 @@
   letter-spacing: -2px;
   text-align: center;
 }
-.short-about p {
+.aboutText {
   text-align: center;
   color: #642420;
   font-family: 'Inter';
@@ -95,10 +95,17 @@
   font-size: 18px;
   margin-top: 20px;
 }
+
+.aboutIntro {
+  text-transform: uppercase;
+  font-weight: bold;
+  color: #c0c9df;
+}
+
 .another-svg {
   margin-top: 50px;
 }
-.short-about .another-svg img {
+.about .another-svg img {
   width: 50px;
   animation: animate-rotate 10s infinite linear;
 }
@@ -116,30 +123,6 @@
   overflow: hidden;
 }
 
-.my-skills-reel {
-  margin-top: 300px;
-  display: flex;
-  align-items: center;
-  white-space: nowrap;
-  width: fit-content;
-  will-change: transform;
-  animation: animation-reel 60s infinite linear;
-}
-
-@keyframes animation-reel {
-  from {
-    transform: translateX(0%);
-  }
-  to {
-    transform: translateX(-100%);
-  }
-}
-.reel-item {
-  font-weight: 400;
-  font-family: 'Ogg';
-  font-size: 180px;
-  text-transform: uppercase;
-}
 .skill-set-boxes {
   display: flex;
   align-items: center;
@@ -217,27 +200,27 @@
 }
 
 @media (max-width: 1200px) {
-  .txt-line p {
+  .nameParagraph p {
     font-size: 100px;
     letter-spacing: -5px;
     font-weight: 500;
   }
-  .line-bottom {
+  .nameParagraphBottom {
     margin-top: -200px;
   }
-  .flower-svg {
+  .flower {
     display: none;
   }
-  .short-about h1 {
+  .about h1 {
     font-size: 100px;
     margin: 0;
     line-height: 88%;
   }
-  .short-about p {
+  .aboutText {
     margin-top: 5px;
     font-weight: 300;
   }
-  .sub-main-p-short-about {
+  .aboutTextContainer {
     margin-top: 10px;
   }
   .reel-item {
@@ -257,31 +240,31 @@
   }
 }
 @media (max-width: 600px) {
-  .short-about p {
+  .aboutText {
     font-size: 12px;
     margin-left: 10px;
     margin-right: 10px;
   }
 
-  .txt-line p {
+  .nameParagraph p {
     font-size: 60px;
     letter-spacing: -2px;
     font-weight: 500;
   }
-  .line-bottom {
+  .nameParagraphBottom {
     margin-top: -120px;
   }
 
-  .left-side-quote {
+  .leftQuote {
     margin-left: 10vw;
   }
-  .left-side-quote p {
+  .leftQuote p {
     font-size: 12px;
   }
-  .container1 {
+  .nameWrapper {
     padding: 0px 50px;
   }
-  .short-about h1 {
+  .about h1 {
     font-size: 60px;
     margin: 0;
     line-height: 88%;

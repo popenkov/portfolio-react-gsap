@@ -1,4 +1,4 @@
-.container-text {
+.textContainer {
   position: absolute;
   top: 0;
   left: 0;
@@ -13,13 +13,13 @@
   justify-content: center;
   letter-spacing: -10px;
 }
-.container-text p {
+.textContainer p {
   overflow: hidden;
 }
-.container-inner-text2 {
-  margin-top: -520px;
+.lastName {
+  // margin-top: -520px;
 }
-.container-quote {
+.quote {
   position: absolute;
   top: 70vh;
   right: 100px;
@@ -30,24 +30,24 @@
   text-transform: uppercase;
   font-weight: 300;
 }
-.container-image {
+.photoContainer {
   position: absolute;
   top: 95vh;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 50vw;
-  /* background: url(../Assets/image.jpeg) 50% 50% no-repeat; */
+  background: url(../Assets/image.jpg) 50% 50% no-repeat;
   background-size: cover;
   filter: grayscale(1);
   height: 110vh;
   z-index: -1;
 }
-.container-quote2 {
+.quoteSecond {
   position: absolute;
   top: 160vh;
   left: 10%;
 }
-.about-container2 {
+.aboutSecond {
   position: absolute;
   top: 190vh;
   display: flex;
@@ -58,14 +58,14 @@
   width: 100%;
   flex-direction: column;
 }
-.about-container2-heading,
+.aboutSecondHeader,
 .about-container2-heading2,
 .about-container2-heading2 p {
   margin-right: 50px;
   margin-left: 50px;
   margin-bottom: 50px;
 }
-.about-container2-heading p,
+.aboutSecondHeader p,
 .about-container2-heading2 p {
   font-size: 200px;
   font-family: 'Ogg';
@@ -76,7 +76,7 @@
 .about-container2-heading2 p {
   text-decoration: line-through 5px #806868;
 }
-.about-container2-p p {
+.aboutParagraph p {
   font-size: 18px;
   font-family: 'Inter';
   margin-bottom: 80px;
@@ -110,20 +110,20 @@
 }
 
 @media (max-width: 1000px) {
-  .container-text {
+  .textContainer {
     font-size: 120px;
   }
-  .container-inner-text2 {
+  .lastName {
     margin-top: -300px;
   }
-  .about-container2-heading p,
+  .aboutSecondHeader p,
   .about-container2-heading2 p {
     font-size: 140px;
   }
   .about-container-flower {
     top: 70vh;
   }
-  .about-container2-heading {
+  .aboutSecondHeader {
     margin-top: 100px;
   }
   .about-container2-heading2 p {
@@ -136,20 +136,20 @@
 
 @media (max-width: 650px) {
   .about-container2-heading2 p,
-  .about-container2-heading p {
+  .aboutSecondHeader p {
     font-size: 90px;
   }
-  .container-quote1 {
+  .quoteFirst {
     top: 50vh;
   }
 
-  .container-image {
+  .photoContainer {
     width: 95vw;
   }
-  .container-text {
+  .textContainer {
     margin-left: 15px;
   }
-  .about-container2-p p {
+  .aboutParagraph p {
     font-size: 15px;
   }
   .about-footer {

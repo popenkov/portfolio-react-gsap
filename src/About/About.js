@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from 'react';
+import clsx from 'clsx';
 import Footer from '../Footer/Footer';
 import GetInTouch from '../GetInTouch/GetInTouch';
 import Header from '../Header/Header';
@@ -46,30 +47,34 @@ function About() {
     <div>
       <div className={styles.about}>
         <Header timeline={timeline_about} />
-        <div className="about-container">
-          <div className="container-text">
-            <div className="container-inner-text1">
+        <div className={styles.aboutContainer}>
+          <div className={styles.textContainer}>
+            <div>
               <p ref={(el) => (text1 = el)}>Anton</p>
             </div>
-            <div className="container-inner-text2">
+            {/* styles.lastName */}
+            <div className={styles.lastName}>
               <p ref={(el) => (text2 = el)}>Popenkov</p>
             </div>
           </div>
           <div
             ref={(el) => (p1 = el)}
-            className="container-quote container-quote1"
+            className={clsx(styles.quote, styles.quoteFirst)}
           >
             I create sites and <br /> applications that cause <br /> pleasant
             emotions
           </div>
-          <div className="container-quote container-quote2">
+          <div className={clsx(styles.quote, styles.quoteSecond)}>
             I specialize in interaction <br /> design, experience websites{' '}
             <br /> and applications
           </div>
-          <div className="container-image" ref={(el) => (image = el)}></div>
+          <div
+            className={styles.photoContainer}
+            ref={(el) => (image = el)}
+          ></div>
         </div>
-        <div className="about-container2">
-          <div className="about-container2-heading">
+        <div className={styles.aboutSecond}>
+          <div className={styles.aboutSecondHeader}>
             <div className="about-text-lower">
               <p>Web Designer,</p>
             </div>
@@ -83,7 +88,7 @@ function About() {
               <p>&nbsp;&nbsp;&nbsp;&nbsp; a Youtuber</p>
             </div>
           </div>
-          <div className="about-container2-p">
+          <div className={styles.aboutParagraph}>
             <p>
               Lorem ipsum dolor sit amet. <br /> Lorem ipsum dolor sit amet,{' '}
               <br /> consectetur adipisicing elit. Sed, cum?

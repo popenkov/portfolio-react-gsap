@@ -1,5 +1,5 @@
 import { useRef, useEffect } from 'react';
-import './Home.css';
+import styles from './Home.module.scss';
 import Header from '../Header/Header';
 import flower from '../Assets/flower.svg';
 import another from '../Assets/another.svg';
@@ -10,6 +10,8 @@ import Footer from '../Footer/Footer';
 import gsap from 'gsap';
 import Skills from '../components/Skills/Skills';
 import Navigation from '../components/Navigation/Navigation';
+import clsx from 'clsx';
+import SkillReel from '../components/SkillReel/SkillReel';
 
 function Home() {
   let text1 = useRef(null);
@@ -42,50 +44,54 @@ function Home() {
   return (
     <div className="home">
       <Header />
-      <div className="container">
-        <div className="container1">
-          <div className="txt-line" id="anton">
+      <div className={styles.container}>
+        <div className={styles.nameWrapper}>
+          <div className={styles.nameParagraph}>
             <p ref={(el) => (text1 = el)}>Anton</p>
           </div>
-          <div className="txt-line line-bottom" id="popenkov">
+          <div
+            className={clsx(styles.nameParagraph, styles.nameParagraphBottom)}
+          >
             <p ref={(el) => (text2 = el)}>Popenkov</p>
           </div>
         </div>
-        <div></div>
       </div>
 
-      <div className="left-side-quote">
+      <div className={styles.leftQuote}>
         <p ref={(el) => (p1 = el)}>
           I create digital experiences that merge art <br /> direction,
           branding, creative strategy, web <br /> design, prototyping, and
           digital interactions.
         </p>
       </div>
-      <div className="container">
+      <div className={styles.container}>
         <div></div>
-        <div className="container1">
-          <div className="txt-line" id="frontend">
+        <div className={styles.nameWrapper}>
+          <div className={styles.nameParagraph}>
             <p ref={(el) => (text3 = el)}>Frontend</p>
           </div>
-          <div className="txt-line line-bottom" id="developer">
+          <div
+            className={clsx(styles.nameParagraph, styles.nameParagraphBottom)}
+          >
             <p ref={(el) => (text4 = el)}>Developer</p>
           </div>
         </div>
       </div>
-      <div className="flower-svg">
+      <div className={styles.flower}>
         <img src={flower} alt="" />
       </div>
-      <div className="short-about">
-        <div className="main-h1-short-about">
-          <h1 className="main-short-about">Shortly</h1>
-          <h1 className="main-short-about">About</h1>
-          <h1 className="main-short-about">MySelf!</h1>
+      <div className={styles.about}>
+        <div className={styles.aboutHeader}>
+          <h1 className="main-short-about">Hello, world!</h1>
         </div>
-        <div className="sub-main-p-short-about">
-          <p className="sub-main-short-about">
-            I BELIEVE THAT EVERY PROJECT THAT I DO SHOULD HAVE AN OVERVALUE.
+        <div className={styles.aboutTextContainer}>
+          <p className={styles.aboutText}>
+            <span className={styles.aboutIntro}>who am i</span> My name is
+            Anton, from Vladimir, Russian Federation. I enjoy creating things
+            that live on the web🌍. I'm focused on building products with
+            JavaScript, TypeScript, specifically React and Next.js.
           </p>
-          <p className="sub-main-short-about">
+          <p className={styles.aboutText}>
             I ALWAYS TRY TO FIND THE OPTIMAL SOLUTION TO THE CLIENT'S TASK.
           </p>
         </div>
@@ -94,18 +100,7 @@ function Home() {
         </div>
       </div>
       <div className="my-skills-main-reel">
-        <div className="my-skills-reel" id="skill-reel">
-          <div className="reel-item">&nbsp; -- My skills</div>
-          <div className="reel-item">&nbsp; -- My skills</div>
-          <div className="reel-item">&nbsp; -- My skills</div>
-          <div className="reel-item">&nbsp; -- My skills</div>
-          <div className="reel-item">&nbsp; -- My skills</div>
-          <div className="reel-item">&nbsp; -- My skills</div>
-          <div className="reel-item">&nbsp; -- My skills</div>
-          <div className="reel-item">&nbsp; -- My skills</div>
-          <div className="reel-item">&nbsp; -- My skills</div>
-          <div className="reel-item">&nbsp; -- My skills</div>
-        </div>
+        <SkillReel />
         <Skills />
 
         <div className="project-and-work">
