@@ -4,6 +4,8 @@ import './Projects.css';
 import arrow from '../Assets/arrow.svg';
 import Footer from '../Footer/Footer';
 import gsap from 'gsap';
+import { Link } from 'react-router-dom';
+import ProjectPreview from '../components/ProjectPreview/ProjectPreview';
 function Projects() {
   const timeline_project = gsap.timeline();
   let text1 = useRef(null);
@@ -46,7 +48,7 @@ function Projects() {
               <div className="project-page-item-number">
                 <p>01/06</p>
               </div>
-              <a href="/">
+              <Link to="/">
                 <div className="project-page-item-header">
                   <h1>Lorem, ipsum.</h1>
                   <p>Lorem, ipsum.</p>
@@ -56,9 +58,10 @@ function Projects() {
                   <p>Lorem ipsum dolor sit amet.</p>
                   <img src={arrow} alt="" />
                 </div>
-              </a>
+              </Link>
             </div>
-            <div className="project-page-item">
+            <ProjectPreview />
+            {/* <div className="project-page-item">
               <div className="project-page-item-number">
                 <p>02/06</p>
               </div>
@@ -137,7 +140,7 @@ function Projects() {
                   <img src={arrow} alt="" />
                 </div>
               </a>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
