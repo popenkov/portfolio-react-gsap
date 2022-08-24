@@ -1,5 +1,8 @@
 * {
-  font-family: 'Ogg';
+  font-family: 'Rubik';
+}
+
+.home {
 }
 .container {
   display: flex;
@@ -74,10 +77,19 @@
   flex-direction: column;
 }
 .aboutHeader {
+  font-family: 'Rubik';
   margin-top: 100px;
+  margin-bottom: -150px;
+  font-size: 150px;
+  font-weight: 500;
+  font-family: 'Ogg';
+
+  letter-spacing: -2px;
+  text-align: center;
 }
 .aboutTextContainer {
   margin-top: 120px;
+  max-width: 1100px;
 }
 .about h1 {
   font-size: 150px;
@@ -89,23 +101,25 @@
 }
 .aboutText {
   text-align: center;
-  color: #642420;
-  font-family: 'Inter';
+  color: #d41145;
+
   font-weight: 500;
   font-size: 18px;
   margin-top: 20px;
 }
 
 .aboutIntro {
+  margin-right: 10px;
+  font-family: 'Rubik';
   text-transform: uppercase;
   font-weight: bold;
   color: #c0c9df;
 }
 
-.another-svg {
+.aboutSvg {
   margin-top: 50px;
 }
-.about .another-svg img {
+.aboutSvg img {
   width: 50px;
   animation: animate-rotate 10s infinite linear;
 }
@@ -167,37 +181,6 @@
   margin-top: 20px;
   font-size: 13px;
 }
-.project-and-work {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 80%;
-  margin-left: 10%;
-  margin-top: 100px;
-  margin-bottom: 100px;
-  flex-direction: column;
-  height: 30vh;
-  padding-bottom: 100px;
-  border-bottom: 1px dashed black;
-}
-.project-and-work h1 .h1-project {
-  text-decoration: none;
-  color: black;
-  font-size: 100px;
-  font-weight: lighter;
-  font-family: 'Ogg';
-  text-decoration: 0.5px line-through;
-}
-.project-and-work p {
-  color: black;
-  font-size: 20px;
-  margin-top: -20px;
-  font-weight: lighter;
-  font-family: 'Inter';
-}
-.h1-project img {
-  width: 90px;
-}
 
 @media (max-width: 1200px) {
   .nameParagraph p {
@@ -226,15 +209,7 @@
   .reel-item {
     font-size: 100px;
   }
-  .project-and-work h1 .h1-project {
-    font-size: 50px;
-  }
-  .project-and-work h1 .h1-project img {
-    width: 30px;
-  }
-  .project-and-work p {
-    margin-top: -30px;
-  }
+
   .skill-set-box {
     margin: 10px 5px;
   }

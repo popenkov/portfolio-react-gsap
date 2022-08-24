@@ -2,7 +2,6 @@ import React, { useEffect, useRef } from 'react';
 import Header from '../Header/Header';
 import './Projects.css';
 import arrow from '../Assets/arrow.svg';
-import GetInTouch from '../GetInTouch/GetInTouch';
 import Footer from '../Footer/Footer';
 import gsap from 'gsap';
 function Projects() {
@@ -142,7 +141,6 @@ function Projects() {
           </div>
         </div>
       </div>
-      <GetInTouch />
       <Footer />
     </div>
   );

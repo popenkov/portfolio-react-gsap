@@ -1,7 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import clsx from 'clsx';
 import Footer from '../Footer/Footer';
-import GetInTouch from '../GetInTouch/GetInTouch';
 import Header from '../Header/Header';
 
 import gsap from 'gsap';
@@ -136,7 +135,6 @@ function About() {
           </div>
         </div>
         <div className="about-footer">
-          <GetInTouch />
           <Footer />
         </div>
       </div>

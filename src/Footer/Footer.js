@@ -25,13 +25,14 @@ function Footer() {
             <div className={styles.socialItems}>
               <a href="">Mail</a>
               <a href="">Whatsapp</a>
-              <a href="">Telegram</a>
-              <a href="">+92 302 4606680</a>
+              <a href="https://t.me/popenkovdev" target="_blank">
+                Telegram
+              </a>
             </div>
           </div>
           <div className={clsx(styles.socialLinks, styles.footerMenu)}>
             <div className={clsx(styles.socialHeader, styles.footerMenuHeader)}>
-              Other Menu
+              Site map
             </div>
             <div className={clsx(styles.socialItems, styles.footerMenuLinks)}>
               <p className={styles.footerMenuItems}>Home.</p>
@@ -40,11 +41,11 @@ function Footer() {
               <p className={styles.footerMenuItems}>Contact.</p>
             </div>
           </div>
-          <div className={styles.footerBtn}>
+          {/* <div className={styles.footerBtn}>
             <a href="" className={styles.footerBtnLink}>
               Get Started!
             </a>
-          </div>
+          </div> */}
         </div>
         <div className={styles.footerBottom}>
           <div className={styles.footerBottomLeft}>
