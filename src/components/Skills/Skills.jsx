@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './Skills.module.scss';
 
-const skills = ['JavaScript', 'React', 'HTML', 'CSS', 'Figma'];
+const skills = ['JavaScript', 'React', 'NextJS', 'HTML', 'CSS', 'Figma'];
 
 function Skills() {
   return (

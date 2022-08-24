@@ -94,8 +94,8 @@ function Home() {
         <SkillReel />
         <Skills />
         <ProjectsLink />
-        <Footer />
       </div>
+      <Footer />
     </div>
   );
 }

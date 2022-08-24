@@ -49,10 +49,10 @@ function Footer() {
         </div>
         <div className={styles.footerBottom}>
           <div className={styles.footerBottomLeft}>
-            <p>ALL RIGHT RESERVED</p>
+            <p>{now.getFullYear()} POPENKOV ANTON</p>
           </div>
           <div className={styles.footerBottomRight}>
-            <p>{now.getFullYear()} POPENKOV ANTON </p>
+            {/* <p>{now.getFullYear()} POPENKOV ANTON </p> */}
           </div>
         </div>
       </div>
