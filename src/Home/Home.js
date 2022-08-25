@@ -11,6 +11,7 @@ import Navigation from '../components/Navigation/Navigation';
 import clsx from 'clsx';
 import SkillReel from '../components/SkillReel/SkillReel';
 import ProjectsLink from '../components/ProjectsLink/ProjectsLink';
+import Tags from '../components/TagCloud/TagCloud';
 
 function Home() {
   let text1 = useRef(null);
@@ -57,8 +58,11 @@ function Home() {
       </div>
 
       <div className={styles.leftQuote}>
-        <p ref={(el) => (p1 = el)}></p>
+        <p ref={(el) => (p1 = el)}>
+          <Tags />
+        </p>
       </div>
+
       <div className={styles.container}>
         <div></div>
         <div className={styles.nameWrapper}>
@@ -90,6 +94,7 @@ function Home() {
           <img src={another} alt="" />
         </div>
       </div>
+
       <div className="my-skills-main-reel">
         <SkillReel />
         <Skills />
