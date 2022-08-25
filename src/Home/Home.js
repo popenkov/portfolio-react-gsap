@@ -58,10 +58,10 @@ function Home() {
       </div>
 
       <div className={styles.leftQuote}>
-        <p ref={(el) => (p1 = el)}></p>
+        {/* <p ref={(el) => (p1 = el)}></p> */}
       </div>
 
-      <div className={styles.container}>
+      <div ref={(el) => (p1 = el)} className={styles.container}>
         <Tags />
         <div></div>
         <div className={styles.nameWrapper}>
@@ -75,9 +75,7 @@ function Home() {
           </div>
         </div>
       </div>
-      <div className={styles.flower}>
-        <img src={flower} alt="" />
-      </div>
+
       <div className={styles.about}>
         <h2 className={styles.aboutHeader}>Hello, world!</h2>
         <div className={styles.aboutTextContainer}>
@@ -90,7 +88,7 @@ function Home() {
           </p>
         </div>
         <div className={styles.aboutSvg}>
-          <img src={another} alt="" />
+          <img src={flower} alt="" />
         </div>
       </div>
 

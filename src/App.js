@@ -9,7 +9,6 @@ import gsap from 'gsap';
 
 import './App.css';
 import Home from './Home/Home';
-import About from './About/About';
 import Projects from './Projects/Projects';
 import Contacts from './Contacts/Contacts';
 import ScrollToTop from './ScrollToTop/ScrollToTop';
@@ -120,7 +119,6 @@ function App() {
           <ScrollToTop />
           <Routes>
             <Route index element={<Home />} />
-            <Route path="/about" element={<About />}></Route>
             <Route path="/projects" element={<Projects />}></Route>
             <Route path="/projects/:id" element={<Project />}></Route>
             <Route path="/contacts" element={<Contacts />}></Route>

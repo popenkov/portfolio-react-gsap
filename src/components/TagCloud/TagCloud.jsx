@@ -11,6 +11,8 @@ const myTags = [
   '<h1>Hello, world!</h1>',
   'img {animation: animate-rotate 10s infinite linear;}',
   'import { useRef, useEffect } from "react"',
+  'const checkIsIOS = () =>  /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;',
+  'interface UserAccount { id: number; email?: string;}',
 ];
 
 function Tags() {
@@ -20,8 +22,8 @@ function Tags() {
       // radius in px
       radius: 250,
       // slow, normal, fast
-      maxSpeed: 'fast',
-      initSpeed: 'fast',
+      maxSpeed: 'normal',
+      initSpeed: 'normal',
       // 0 = top
       // 90 = left
       // 135 = right-bottom
