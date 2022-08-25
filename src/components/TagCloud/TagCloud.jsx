@@ -6,18 +6,11 @@ const myTags = [
   'JavaScript',
   'CSS',
   'HTML',
-  'C',
-  'C++',
+  'NextJS',
   'React',
-  'Python',
-  'Java',
-  'git',
-  'django',
-  'Node.js',
-  'OpenCV',
-  'GCP',
-  'MySQL',
-  'jQuery',
+  '<h1>Hello, world!</h1>',
+  'img {animation: animate-rotate 10s infinite linear;}',
+  'import { useRef, useEffect } from "react"',
 ];
 
 function Tags() {

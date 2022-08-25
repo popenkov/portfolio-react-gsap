@@ -58,12 +58,11 @@ function Home() {
       </div>
 
       <div className={styles.leftQuote}>
-        <p ref={(el) => (p1 = el)}>
-          <Tags />
-        </p>
+        <p ref={(el) => (p1 = el)}></p>
       </div>
 
       <div className={styles.container}>
+        <Tags />
         <div></div>
         <div className={styles.nameWrapper}>
           <div className={styles.nameParagraph}>
@@ -95,7 +94,7 @@ function Home() {
         </div>
       </div>
 
-      <div className="my-skills-main-reel">
+      <div className={styles.reel}>
         <SkillReel />
         <Skills />
         <ProjectsLink />
