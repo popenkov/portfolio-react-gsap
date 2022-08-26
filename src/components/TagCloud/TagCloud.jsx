@@ -13,6 +13,9 @@ const myTags = [
   'import { useRef, useEffect } from "react"',
   'const checkIsIOS = () =>  /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;',
   'interface UserAccount { id: number; email?: string;}',
+  '</>',
+  'true',
+  'false',
 ];
 
 function Tags() {

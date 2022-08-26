@@ -13,7 +13,8 @@ import Projects from './Projects/Projects';
 import Contacts from './Contacts/Contacts';
 import ScrollToTop from './ScrollToTop/ScrollToTop';
 import Project from './pages/Project/Project';
-import BlogItem from './pages/BlogItem/BlogItem';
+import Post from './pages/Post/Post';
+import Blog from './pages/Blog/Blog';
 
 function App() {
   let cursor = useRef(null);
@@ -122,7 +123,8 @@ function App() {
             <Route index element={<Home />} />
             <Route path="/projects" element={<Projects />}></Route>
             <Route path="/projects/:id" element={<Project />}></Route>
-            <Route path="/blog/:id" element={<BlogItem />}></Route>
+            <Route path="/blog" element={<Blog />}></Route>
+            <Route path="/blog/:id" element={<Post />}></Route>
             <Route path="/contacts" element={<Contacts />}></Route>
           </Routes>
           <div className="cursor-follower" ref={(el) => (cursor = el)}></div>
