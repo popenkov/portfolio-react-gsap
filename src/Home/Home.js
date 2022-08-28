@@ -12,6 +12,34 @@ import clsx from 'clsx';
 import SkillReel from '../components/SkillReel/SkillReel';
 import ProjectsLink from '../components/ProjectsLink/ProjectsLink';
 import Tags from '../components/TagCloud/TagCloud';
+import ProjectItem from '../components/ProjectItem/ProjectItem';
+
+const data = [
+  {
+    id: '1',
+    name: 'test',
+    backgroundImg:
+      'https://images.unsplash.com/photo-1661510048029-42404e817867?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80',
+  },
+  {
+    id: '2',
+    name: 'test2',
+    backgroundImg:
+      'https://images.unsplash.com/photo-1661473677057-9b69b8ccc53a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1196&q=80',
+  },
+  {
+    id: '3',
+    name: 'tes3',
+    backgroundImg:
+      'https://images.unsplash.com/photo-1661602715735-d401dafd3615?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1228&q=80',
+  },
+  {
+    id: '4',
+    name: 'test4',
+    backgroundImg:
+      'https://images.unsplash.com/photo-1661415746824-8eb9fe0275dc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1976&q=80',
+  },
+];
 
 function Home() {
   let text1 = useRef(null);
@@ -96,6 +124,14 @@ function Home() {
         <SkillReel />
         <Skills />
         <ProjectsLink />
+
+        {data?.length > 0 && (
+          <div className={styles.projectsPreview}>
+            {data.map((item) => {
+              return <ProjectItem {...item} key={item.id} />;
+            })}
+          </div>
+        )}
       </div>
       <Footer />
     </div>

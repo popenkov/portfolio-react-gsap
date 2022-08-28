@@ -1,6 +1,17 @@
 .tags {
+  position: absolute;
+  z-index: 0;
+  top: 35vh;
   font-size: 20px;
   margin-left: 100px;
-  width: 50%;
+  width: 35%;
   color: #d41145;
+  @media (max-width: 1200px) {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  @media (max-width: 768px) {
+    display: none;
+  }
 }

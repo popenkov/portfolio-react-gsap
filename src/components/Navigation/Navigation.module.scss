@@ -1,17 +1,3 @@
-.noise::before {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  content: '';
-
-  opacity: 0.03;
-  z-index: 1500;
-  pointer-events: none;
-  background: url(../../Assets/noise.gif);
-}
-
 .menu {
   position: fixed;
   z-index: 5;
@@ -25,26 +11,34 @@
 }
 .button {
   position: absolute;
+  z-index: 10;
   top: 50px;
   right: 100px;
   text-decoration: none;
   color: black;
   right: 100px;
-  font-family: 'Monument';
   font-size: 15px;
   font-weight: 500;
   cursor: pointer;
   color: white;
+
+  @media (max-width: 768px) {
+    top: 32px;
+    right: 32px;
+  }
 }
 .navigationList {
-  position: absolute;
-  left: 20%;
+  margin-left: 20%;
   display: flex;
-  width: 300px;
   justify-content: center;
   align-items: left;
   height: 100vh;
   flex-direction: column;
+
+  @media (max-width: 768px) {
+    margin-left: 0;
+    height: auto;
+  }
 }
 .navigationItem {
   margin: 20px 0;
@@ -73,6 +67,9 @@
   display: flex;
   height: 80px;
   width: 100%;
+
+  @media (max-width: 768px) {
+  }
 }
 .socialList {
   margin-left: 50px;

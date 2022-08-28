@@ -107,15 +107,12 @@
     padding: 0px 5px;
     padding-top: 5px;
     border-radius: 1px;
-    background-color: #161616;
+    // background-color: #161616;
   }
   .toggleMenu img {
     width: 40px;
     font-weight: lighter;
     color: #f0f0f0;
-  }
-  .header:hover .menuItems {
-    display: block;
   }
 }
 @media (max-width: 400px) {

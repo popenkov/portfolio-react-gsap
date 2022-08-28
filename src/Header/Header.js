@@ -38,12 +38,12 @@ const Header = () => {
         <header className={styles.header}>
           <div id="logo" className={styles.logo}></div>
           <div className={styles.toggleMenu}>
-            <img src={MenuIcon} alt="" />
-          </div>
-          <ul className={styles.menuItems}>
+            {/* <img src={MenuIcon} alt="" /> */}
             <button type="button" className={styles.button} onClick={openModal}>
               <img src={MenuIcon} alt="" />
             </button>
+          </div>
+          <ul className={styles.menuItems}>
             <li className={styles.menuItem} ref={(el) => (li1 = el)}>
               <Link to="/" className={styles.menuItemLink}>
                 Home

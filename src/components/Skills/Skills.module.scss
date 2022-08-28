@@ -3,6 +3,11 @@
   flex-wrap: wrap;
   max-width: 45vw;
   padding: 0px 60px;
+
+  @media (max-width: 768px) {
+    max-width: unset;
+    padding: 0 16px;
+  }
 }
 
 @keyframes marquee {
@@ -33,6 +38,10 @@
   padding: 0 1rem;
   color: #c0c9df;
   transition: cubic-bezier(0.215, 0.61, 0.355, 1) 0.4s all;
+
+  @media (max-width: 768px) {
+    margin: 10px 5px;
+  }
 
   &:hover > span {
     opacity: 0;

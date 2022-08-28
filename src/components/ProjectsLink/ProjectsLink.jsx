@@ -7,9 +7,9 @@ function ProjectsLink() {
   return (
     <div className={styles.projects}>
       <Link className={styles.projectsLink} to="/projects">
-        My Projects and Works <img src={arrow} alt="" />
+        All Projects and Works <img src={arrow} alt="" />
       </Link>
-      <p>Кликни на ссылку</p>
+      {/* <p>Кликни на ссылку</p> */}
     </div>
   );
 }

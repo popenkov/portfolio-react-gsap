@@ -86,12 +86,18 @@
 
   letter-spacing: -2px;
   text-align: center;
+
+  @media (max-width: 768px) {
+    font-size: 100px;
+    line-height: 105%;
+  }
 }
 .aboutTextContainer {
   margin-top: 120px;
   max-width: 1100px;
+  letter-spacing: 0;
 }
-.about h1 {
+.about {
   font-size: 150px;
   font-weight: 500;
   font-family: 'Ogg';
@@ -194,7 +200,7 @@
   .flower {
     display: none;
   }
-  .about h1 {
+  .about {
     font-size: 100px;
     margin: 0;
     line-height: 88%;
@@ -204,7 +210,7 @@
     font-weight: 300;
   }
   .aboutTextContainer {
-    margin-top: 10px;
+    margin-top: 150px;
   }
   .reel-item {
     font-size: 100px;
@@ -216,7 +222,8 @@
 }
 @media (max-width: 600px) {
   .aboutText {
-    font-size: 12px;
+    font-size: 16px;
+    line-height: 140%;
     margin-left: 10px;
     margin-right: 10px;
   }
@@ -239,7 +246,7 @@
   .nameWrapper {
     padding: 0px 50px;
   }
-  .about h1 {
+  .about {
     font-size: 60px;
     margin: 0;
     line-height: 88%;
@@ -248,4 +255,16 @@
   .reel-item {
     font-size: 60px;
   }
+}
+
+.projectsPreview {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  justify-content: center;
+
+  padding-bottom: 100px;
+  border-bottom: 1px dashed black;
 }

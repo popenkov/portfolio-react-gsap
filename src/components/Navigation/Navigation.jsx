@@ -37,21 +37,21 @@ function Navigation({ isOpen, onClose }) {
           y: '0%',
           stagger: 0.25,
         }
-      )
-      .fromTo(
-        [social1, social2, social3],
-        0.5,
-        {
-          y: '-50%',
-          autoAlpha: 0,
-        },
-        {
-          duration: 0.8,
-          autoAlpha: 1,
-          stagger: 0.25,
-          ease: Expo.easeOut,
-        }
       );
+    // .fromTo(
+    //   [social1, social2, social3],
+    //   0.5,
+    //   {
+    //     y: '-50%',
+    //     autoAlpha: 0,
+    //   },
+    //   {
+    //     duration: 0.8,
+    //     autoAlpha: 1,
+    //     stagger: 0.25,
+    //     ease: Expo.easeOut,
+    //   }
+    // );
   }, []);
 
   useEffect(() => {
@@ -103,7 +103,7 @@ function Navigation({ isOpen, onClose }) {
             </li>
           </ul>
         </nav>
-        <div className={styles.social}>
+        {/* <div className={styles.social}>
           <ul className={styles.socialList}>
             <li ref={(el) => (social1 = el)} className={styles.socialItem}>
               <a href="#" className={styles.socialLink}>
@@ -121,7 +121,7 @@ function Navigation({ isOpen, onClose }) {
               </a>
             </li>
           </ul>
-        </div>
+        </div> */}
       </div>
     </>,
     document.body

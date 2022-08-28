@@ -9,7 +9,7 @@ import gsap from 'gsap';
 
 import './App.css';
 import Home from './Home/Home';
-import Projects from './Projects/Projects';
+import Projects from './pages/Projects/Projects';
 import Contacts from './Contacts/Contacts';
 import ScrollToTop from './ScrollToTop/ScrollToTop';
 import Project from './pages/Project/Project';
