@@ -63,14 +63,13 @@ function Projects() {
     <div className={styles.projects}>
       <Header />
       <div ref={containerRef} className={styles.container}>
-        <div className={styles.title}>
-          <h1>Projects:</h1>
+        <h1 className={styles.title}>Projects:</h1>
+        <div className={styles.projectsContainer}>
+          {data?.length > 0 &&
+            data.map((item) => {
+              return <ProjectItem {...item} key={item.id} />;
+            })}
         </div>
-
-        {data?.length > 0 &&
-          data.map((item) => {
-            return <ProjectItem {...item} key={item.id} />;
-          })}
       </div>
     </div>
   );
