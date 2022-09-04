@@ -1,7 +1,7 @@
 .tags {
   position: absolute;
   z-index: 0;
-  top: 20vh;
+  // top: 20vh;
   font-size: 20px;
   margin-left: 100px;
   width: 35%;
@@ -17,8 +17,9 @@
   }
 
   @media (max-width: 768px) {
-    top: 0;
-    opacity: 0.5;
-    // display: none;
+    position: absolute;
+    top: -30vh;
+    opacity: 0.6;
+    overflow: hidden;
   }
 }

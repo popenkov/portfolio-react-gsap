@@ -1,8 +1,6 @@
 import { useRef, useEffect } from 'react';
 import styles from './Home.module.scss';
 import Header from '../Header/Header';
-import flower from '../Assets/flower.svg';
-import another from '../Assets/another.svg';
 
 import Footer from '../Footer/Footer';
 import gsap from 'gsap';
@@ -72,34 +70,36 @@ function Home() {
   return (
     <div className={styles.home}>
       <Header />
-      <div className={styles.container}>
-        <div className={styles.nameWrapper}>
-          <div className={styles.nameParagraph}>
-            <p ref={(el) => (text1 = el)}>Anton</p>
-          </div>
-          <div
-            className={clsx(styles.nameParagraph, styles.nameParagraphBottom)}
-          >
-            <p ref={(el) => (text2 = el)}>Popenkov</p>
+      <div className={styles.heroWrapper}>
+        <div className={styles.container}>
+          <div className={styles.nameWrapper}>
+            <div className={styles.nameParagraph}>
+              <p ref={(el) => (text1 = el)}>Anton</p>
+            </div>
+            <div
+              className={clsx(styles.nameParagraph, styles.nameParagraphBottom)}
+            >
+              <p ref={(el) => (text2 = el)}>Popenkov</p>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div className={styles.leftQuote}>
-        {/* <p ref={(el) => (p1 = el)}></p> */}
-      </div>
+        <div className={styles.leftQuote}>
+          {/* <p ref={(el) => (p1 = el)}></p> */}
+        </div>
 
-      <div ref={(el) => (p1 = el)} className={styles.container}>
-        <Tags />
-        <div></div>
-        <div className={styles.nameWrapper}>
-          <div className={styles.nameParagraph}>
-            <p ref={(el) => (text3 = el)}>Frontend</p>
-          </div>
-          <div
-            className={clsx(styles.nameParagraph, styles.nameParagraphBottom)}
-          >
-            <p ref={(el) => (text4 = el)}>Developer</p>
+        <div ref={(el) => (p1 = el)} className={styles.container}>
+          <Tags />
+          <div></div>
+          <div className={styles.nameWrapper}>
+            <div className={styles.nameParagraph}>
+              <p ref={(el) => (text3 = el)}>Frontend</p>
+            </div>
+            <div
+              className={clsx(styles.nameParagraph, styles.nameParagraphBottom)}
+            >
+              <p ref={(el) => (text4 = el)}>Developer</p>
+            </div>
           </div>
         </div>
       </div>
@@ -115,24 +115,20 @@ function Home() {
             React и Next.js. Буду рад общению и обратной связи.
           </p>
         </div>
-        <div className={styles.aboutSvg}>
-          <img src={flower} alt="" />
+      </div>
+
+      <SkillReel />
+      <Skills />
+      <ProjectsLink />
+
+      {data?.length > 0 && (
+        <div className={styles.projectsPreview}>
+          {data.map((item) => {
+            return <ProjectItem {...item} key={item.id} page="home" />;
+          })}
         </div>
-      </div>
+      )}
 
-      <div className={styles.reel}>
-        <SkillReel />
-        <Skills />
-        <ProjectsLink />
-
-        {data?.length > 0 && (
-          <div className={styles.projectsPreview}>
-            {data.map((item) => {
-              return <ProjectItem {...item} key={item.id} />;
-            })}
-          </div>
-        )}
-      </div>
       <Footer />
     </div>
   );

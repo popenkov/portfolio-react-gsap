@@ -4,6 +4,10 @@
   max-width: 45vw;
   padding: 0px 60px;
 
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+
   @media (max-width: 768px) {
     max-width: unset;
     padding: 0 16px;
@@ -40,7 +44,11 @@
   transition: cubic-bezier(0.215, 0.61, 0.355, 1) 0.4s all;
 
   @media (max-width: 768px) {
+    height: 40px;
     margin: 10px 5px;
+    font-size: 16px;
+    line-height: 40px;
+    // line-height: 140%;
   }
 
   &:hover > span {

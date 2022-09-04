@@ -38,20 +38,6 @@ function Navigation({ isOpen, onClose }) {
           stagger: 0.25,
         }
       );
-    // .fromTo(
-    //   [social1, social2, social3],
-    //   0.5,
-    //   {
-    //     y: '-50%',
-    //     autoAlpha: 0,
-    //   },
-    //   {
-    //     duration: 0.8,
-    //     autoAlpha: 1,
-    //     stagger: 0.25,
-    //     ease: Expo.easeOut,
-    //   }
-    // );
   }, []);
 
   useEffect(() => {
@@ -73,8 +59,6 @@ function Navigation({ isOpen, onClose }) {
 
   return ReactDOM.createPortal(
     <>
-      {/* <div className={styles.noise}></div> */}
-
       <div ref={(el) => (menu = el)} className={styles.menu}>
         <div className={styles.button} onClick={onClose}>
           X
@@ -82,18 +66,18 @@ function Navigation({ isOpen, onClose }) {
         <nav>
           <ul className={styles.navigationList}>
             <li ref={(el) => (li1 = el)} className={styles.navigationItem}>
-              <Link to="#" className={styles.navigationLink}>
+              <Link to="/" className={styles.navigationLink}>
                 Home
               </Link>
             </li>
             <li ref={(el) => (li2 = el)} className={styles.navigationItem}>
-              <Link to="#" className={styles.navigationLink}>
-                About
+              <Link to="/projects" className={styles.navigationLink}>
+                Projects
               </Link>
             </li>
             <li ref={(el) => (li3 = el)} className={styles.navigationItem}>
-              <Link to="#" className={styles.navigationLink}>
-                Services
+              <Link to="/blog" className={styles.navigationLink}>
+                Block
               </Link>
             </li>
             <li ref={(el) => (li4 = el)} className={styles.navigationItem}>

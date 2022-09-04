@@ -13,15 +13,6 @@ function SkillReel() {
       <div className={styles.skillsItem}>&nbsp; My skills</div>
       <div className={styles.skillsItem}>&nbsp; My skills</div>
       <div className={styles.skillsItem}>&nbsp; My skills</div>
-
-      {/* <div className={styles.skillsItem}>&nbsp; -- My skills</div>
-      <div className={styles.skillsItem}>&nbsp; -- My skills</div>
-      <div className={styles.skillsItem}>&nbsp; -- My skills</div>
-      <div className={styles.skillsItem}>&nbsp; -- My skills</div>
-      <div className={styles.skillsItem}>&nbsp; -- My skills</div>
-      <div className={styles.skillsItem}>&nbsp; -- My skills</div>
-      <div className={styles.skillsItem}>&nbsp; -- My skills</div>
-      <div className={styles.skillsItem}>&nbsp; -- My skills</div> */}
     </div>
   );
 }

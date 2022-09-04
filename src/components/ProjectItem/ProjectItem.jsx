@@ -1,11 +1,15 @@
+import clsx from 'clsx';
 import { Link } from 'react-router-dom';
 import enter from '../../Assets/enter.svg';
 import styles from './ProjectItem.module.scss';
 
-function ProjectItem({ name, backgroundImg }) {
+function ProjectItem({ name, backgroundImg, page = 'projects' }) {
   return (
     <div
-      className={styles.container}
+      className={clsx(styles.container, {
+        [styles.home]: page === 'home',
+        [styles.projects]: page === 'projects',
+      })}
       style={{ backgroundImage: `url("${backgroundImg}")` }}
     >
       <div className={styles.hover}>

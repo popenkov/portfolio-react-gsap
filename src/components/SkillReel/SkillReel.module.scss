@@ -21,4 +21,13 @@
   font-family: 'Ogg';
   font-size: 100px;
   text-transform: uppercase;
+
+  @media (max-width: 1200px) {
+    font-size: 80px;
+    font-weight: 500;
+  }
+  @media (max-width: 600px) {
+    font-size: 60px;
+    font-weight: 500;
+  }
 }

@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import BreadCrumbs from '../../components/BreadCrumbs/BreadCrumbs';
 import styles from './Post.module.scss';
 
 const data = {
@@ -22,13 +23,8 @@ function Post() {
           backgroundImage: `url("${img}")`,
         }}
       >
-        {breadcrumbs?.length > 0 && (
-          <div>
-            {breadcrumbs.map((item, index) => {
-              return <Link to={item.href}>{item.name}</Link>;
-            })}
-          </div>
-        )}
+        {breadcrumbs?.length > 0 && <BreadCrumbs breadcrumbs={breadcrumbs} />}
+
         <h2 className={styles.title}>{title}</h2>
         <p className={styles.date}>{date}</p>
       </div>
