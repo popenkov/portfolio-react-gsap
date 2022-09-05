@@ -10,6 +10,10 @@
   text-decoration: none;
   color: #c0c9df;
 
+  &:hover {
+    color: white;
+  }
+
   &:not(:last-child)::after {
     content: '/';
     margin-left: 10px;
