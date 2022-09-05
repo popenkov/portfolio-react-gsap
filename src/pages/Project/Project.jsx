@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import { useParams } from 'react-router-dom';
 import BreadCrumbs from '../../components/BreadCrumbs/BreadCrumbs';
+import { splitWords } from '../../utils/textAnimation';
 
 import styles from './Project.module.scss';
 
@@ -32,7 +33,13 @@ const data = {
 };
 
 function Project() {
-  const { id } = useParams();
+  // const { id } = useParams();
+  const refToAnimate = useRef(null);
+
+  useEffect(() => {
+    splitWords(refToAnimate.current);
+  }, []);
+
   return (
     <div className={styles.project}>
       <div
@@ -42,7 +49,11 @@ function Project() {
         <div className={styles.container}>
           <BreadCrumbs breadcrumbs={data.breadcrumbs} />
           <h1 className={styles.title}>{data.title}</h1>
-          {data.preview && <p className={styles.preview}>{data.preview}</p>}
+          {data.preview && (
+            <p className={styles.preview} ref={refToAnimate}>
+              {data.preview}
+            </p>
+          )}
           {data.links && (
             <div className={styles.links}>
               {data.links.map((item, index) => {
