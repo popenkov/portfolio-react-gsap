@@ -63,6 +63,12 @@
   letter-spacing: 2.2px;
   color: #ffffff;
 
+  span {
+    will-change: opacity, filter;
+    opacity: 0;
+    filter: blur(0px);
+  }
+
   @media (max-width: 600px) {
     text-align: center;
   }
