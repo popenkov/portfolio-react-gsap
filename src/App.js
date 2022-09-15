@@ -1,6 +1,13 @@
 import React, { useRef, useEffect } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import gsap from 'gsap';
+import {
+  useQuery,
+  useMutation,
+  useQueryClient,
+  QueryClient,
+  QueryClientProvider,
+} from '@tanstack/react-query';
 import 'swiper/css';
 
 import './App.css';
@@ -13,6 +20,14 @@ import Post from './pages/Post/Post';
 import Blog from './pages/Blog/Blog';
 
 function App() {
+  const queryClient = new QueryClient({
+    defaultOptions: {
+      queries: {
+        refetchOnWindowFocus: false, //если возвращаюсь на страницу, где уже был, происходит повторная загрузка
+      },
+    },
+  });
+
   let cursor = useRef(null);
   let posX1 = useRef(null);
   let posY1 = useRef(null);
@@ -100,33 +115,35 @@ function App() {
     loading();
   });
   return (
-    <div>
-      <Router>
-        <div className="noise"></div>
-        <div className="App">
-          <div className="loader" ref={(el) => (loader = el)}>
-            <div className="progress" ref={(el) => (progress = el)}>
-              <div id="percent" ref={(el) => (percent = el)}>
-                1%
-              </div>
-              <div id="bar" ref={(el) => (bar = el)}>
-                <div id="barc" ref={(el) => (barc = el)}></div>
+    <QueryClientProvider client={queryClient}>
+      <div>
+        <Router>
+          <div className="noise"></div>
+          <div className="App">
+            <div className="loader" ref={(el) => (loader = el)}>
+              <div className="progress" ref={(el) => (progress = el)}>
+                <div id="percent" ref={(el) => (percent = el)}>
+                  1%
+                </div>
+                <div id="bar" ref={(el) => (bar = el)}>
+                  <div id="barc" ref={(el) => (barc = el)}></div>
+                </div>
               </div>
             </div>
+            <ScrollToTop />
+            <Routes>
+              <Route index element={<Home />} />
+              <Route path="/projects" element={<Projects />}></Route>
+              <Route path="/projects/:id" element={<Project />}></Route>
+              <Route path="/blog" element={<Blog />}></Route>
+              <Route path="/blog/:id" element={<Post />}></Route>
+              <Route path="/contacts" element={<Contacts />}></Route>
+            </Routes>
+            <div className="cursor-follower" ref={(el) => (cursor = el)}></div>
           </div>
-          <ScrollToTop />
-          <Routes>
-            <Route index element={<Home />} />
-            <Route path="/projects" element={<Projects />}></Route>
-            <Route path="/projects/:id" element={<Project />}></Route>
-            <Route path="/blog" element={<Blog />}></Route>
-            <Route path="/blog/:id" element={<Post />}></Route>
-            <Route path="/contacts" element={<Contacts />}></Route>
-          </Routes>
-          <div className="cursor-follower" ref={(el) => (cursor = el)}></div>
-        </div>
-      </Router>
-    </div>
+        </Router>
+      </div>
+    </QueryClientProvider>
   );
 }
 

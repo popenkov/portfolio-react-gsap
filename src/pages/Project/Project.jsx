@@ -1,8 +1,10 @@
-import React, { useEffect, useRef } from 'react';
+import { useQuery } from '@tanstack/react-query';
+import React, { useEffect, useRef, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import BreadCrumbs from '../../components/BreadCrumbs/BreadCrumbs';
 import OtherProjects from '../../components/OtherProjects/OtherProjects';
 import Footer from '../../Footer/Footer';
+import { ProjectsService } from '../../services/projects.service';
 import { splitWords } from '../../utils/textAnimation';
 
 import styles from './Project.module.scss';
@@ -83,88 +85,100 @@ const data = {
     },
   ],
 };
+
 function Project() {
   const { id } = useParams();
-  const { breadcrumbs, otherProjects } = data;
-  const { title, preview, links, img, task, role, duration, tags, text } =
-    data.items[id];
+  const [post, setPost] = useState();
+
+  const {
+    isLoading,
+    data: response,
+    error,
+  } = useQuery(
+    ['project item'], // уникальный ключ для запроса
+    () => ProjectsService.getProject(id)
+  );
+
+  // const { breadcrumbs, otherProjects } = data;
+  // const { title, preview, links, img, task, role, duration, tags, text } =
+  //   data.items[id];
   const refToAnimate = useRef(null);
 
-  useEffect(() => {
-    splitWords(refToAnimate.current);
-  }, []);
+  // useEffect(() => {
+  //   splitWords(refToAnimate.current);
+  // }, []);
 
   return (
     <>
-      <div className={styles.project}>
-        <div
-          className={styles.background}
-          style={{ backgroundImage: `url(${img})` }}
-        >
-          <div className={styles.container}>
-            <BreadCrumbs breadcrumbs={breadcrumbs} />
-            <h1 className={styles.title}>{title}</h1>
-            {preview && (
-              <p className={styles.preview} ref={refToAnimate}>
-                {preview}
-              </p>
-            )}
-            {links && (
-              <div className={styles.links}>
-                {links.map((item, index) => {
-                  return (
-                    <a
-                      className={styles.link}
-                      href={item.href}
-                      target="_blank"
-                      rel="noreferrer"
-                      key={index}
-                    >
-                      {item.title}
-                    </a>
-                  );
-                })}
-              </div>
-            )}
-          </div>
-        </div>
-        {/* <img className={styles.img} src={img} /> */}
-        <div className={styles.description}>
-          {task && (
-            <p
-              className={styles.task}
-              dangerouslySetInnerHTML={{ __html: task }}
-            ></p>
-          )}
-          {role && (
-            <div className={styles.role}>
-              <p className={styles.roleTitle}>Моя роль:</p>
-              <p className={styles.roleText}>{role}</p>
-            </div>
-          )}
-          {tags && (
-            <div className={styles.technologoies}>
-              <p className={styles.technologoiesTitle}>
-                Используемые технологии:
-              </p>
-              <div className={styles.technologoiesTags}>
-                {tags.map((item, index) => {
-                  return (
-                    <p key={index} className={styles.technologoiesTag}>
-                      {item}{' '}
-                    </p>
-                  );
-                })}
-              </div>
-            </div>
-          )}
-          {text && <p className={styles.text}>{text}</p>}
-        </div>
-        <OtherProjects data={otherProjects} currentIndex={id} />
-      </div>
+      {isLoading ? (
+        <p>Loading</p>
+      ) : response?.data?.length ? (
+        <p>{response?.data[0]?.title}</p>
+      ) : (
+        <p>Not found</p>
+      )}
+
       <Footer />
     </>
   );
 }
+
+// <div className={styles.project}>
+//   <div className={styles.background} style={{ backgroundImage: `url(${img})` }}>
+//     <div className={styles.container}>
+//       <BreadCrumbs breadcrumbs={breadcrumbs} />
+//       <h1 className={styles.title}>{title}</h1>
+//       {preview && (
+//         <p className={styles.preview} ref={refToAnimate}>
+//           {preview}
+//         </p>
+//       )}
+//       {links && (
+//         <div className={styles.links}>
+//           {links.map((item, index) => {
+//             return (
+//               <a
+//                 className={styles.link}
+//                 href={item.href}
+//                 target="_blank"
+//                 rel="noreferrer"
+//                 key={index}
+//               >
+//                 {item.title}
+//               </a>
+//             );
+//           })}
+//         </div>
+//       )}
+//     </div>
+//   </div>
+//   <div className={styles.description}>
+//     {task && (
+//       <p className={styles.task} dangerouslySetInnerHTML={{ __html: task }}></p>
+//     )}
+//     {role && (
+//       <div className={styles.role}>
+//         <p className={styles.roleTitle}>Моя роль:</p>
+//         <p className={styles.roleText}>{role}</p>
+//       </div>
+//     )}
+//     {tags && (
+//       <div className={styles.technologoies}>
+//         <p className={styles.technologoiesTitle}>Используемые технологии:</p>
+//         <div className={styles.technologoiesTags}>
+//           {tags.map((item, index) => {
+//             return (
+//               <p key={index} className={styles.technologoiesTag}>
+//                 {item}{' '}
+//               </p>
+//             );
+//           })}
+//         </div>
+//       </div>
+//     )}
+//     {text && <p className={styles.text}>{text}</p>}
+//   </div>
+//   <OtherProjects data={otherProjects} currentIndex={id} />
+// </div>;
 
 export default Project;
