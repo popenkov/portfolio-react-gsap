@@ -9,7 +9,7 @@ import { splitWords } from '../../utils/textAnimation';
 
 import styles from './Project.module.scss';
 
-const data = {
+const breadcrumbsData = {
   breadcrumbs: [
     { href: '/', name: 'Домой' },
     { href: '/projects', name: 'Все проекты' },
@@ -88,32 +88,122 @@ const data = {
 
 function Project() {
   const { id } = useParams();
-  const [post, setPost] = useState();
+  const [project, setProject] = useState();
 
   const {
     isLoading,
     data: response,
     error,
   } = useQuery(
-    ['project item'], // уникальный ключ для запроса
-    () => ProjectsService.getProject(id)
+    ['project item', id], // уникальный ключ для запроса
+    () => ProjectsService.getProject(id),
+    {
+      onSuccess: ({ data }) => {
+        setProject(data[0]);
+      },
+      onError: (error) => {
+        console.log(error.message);
+      },
+    }
   );
 
-  // const { breadcrumbs, otherProjects } = data;
-  // const { title, preview, links, img, task, role, duration, tags, text } =
-  //   data.items[id];
+  const { breadcrumbs, otherProjects } = breadcrumbsData;
+
   const refToAnimate = useRef(null);
 
-  // useEffect(() => {
-  //   splitWords(refToAnimate.current);
-  // }, []);
+  // let otherProjects;
+
+  useEffect(() => {
+    // splitWords(refToAnimate.current);
+  }, []);
+
+  useEffect(() => {
+    // splitWords(refToAnimate.current);
+    console.log(!!response);
+
+    // if (!!response && response?.data[0]) {
+    //   let otherProjects = response?.data[0].map((item) => {
+    //     return {
+    //       id: item._id,
+    //       title: item.title,
+    //       backgroundImg: item.img,
+    //     };
+    //   });
+
+    //   console.log(otherProjects);
+    // }
+  }, [response]);
 
   return (
     <>
       {isLoading ? (
         <p>Loading</p>
       ) : response?.data?.length ? (
-        <p>{response?.data[0]?.title}</p>
+        <div className={styles.project}>
+          <div
+            className={styles.background}
+            style={{ backgroundImage: `url(${project.img})` }}
+          >
+            <div className={styles.container}>
+              <BreadCrumbs breadcrumbs={breadcrumbs} />
+              <h1 className={styles.title}>{project.title}</h1>
+              {project.preview && (
+                <p className={styles.preview} ref={refToAnimate}>
+                  {project.preview}
+                </p>
+              )}
+              {project.links && (
+                <div className={styles.links}>
+                  {project.links.map((item, index) => {
+                    return (
+                      <a
+                        className={styles.link}
+                        href={item.href}
+                        target="_blank"
+                        rel="noreferrer"
+                        key={index}
+                      >
+                        {item.title}
+                      </a>
+                    );
+                  })}
+                </div>
+              )}
+            </div>
+          </div>
+          <div className={styles.description}>
+            {project.task && (
+              <p
+                className={styles.task}
+                dangerouslySetInnerHTML={{ __html: project.task }}
+              ></p>
+            )}
+            {project.role && (
+              <div className={styles.role}>
+                <p className={styles.roleTitle}>Моя роль:</p>
+                <p className={styles.roleText}>{project.role}</p>
+              </div>
+            )}
+            {project.tags && (
+              <div className={styles.technologoies}>
+                <p className={styles.technologoiesTitle}>
+                  Используемые технологии:
+                </p>
+                <div className={styles.technologoiesTags}>
+                  {project.tags.map((item, index) => {
+                    return (
+                      <p key={index} className={styles.technologoiesTag}>
+                        {item}
+                      </p>
+                    );
+                  })}
+                </div>
+              </div>
+            )}
+            {project.text && <p className={styles.text}>{project.text}</p>}
+          </div>
+          <OtherProjects data={otherProjects} currentIndex={id} />
+        </div>
       ) : (
         <p>Not found</p>
       )}
