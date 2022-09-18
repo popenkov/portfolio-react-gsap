@@ -4,6 +4,8 @@ import { useParams } from 'react-router-dom';
 import BreadCrumbs from '../../components/BreadCrumbs/BreadCrumbs';
 import OtherProjects from '../../components/OtherProjects/OtherProjects';
 import Footer from '../../Footer/Footer';
+import { useGetAllProjects } from '../../hooks/useAllProjects';
+import { useGetProject } from '../../hooks/useProject';
 import { ProjectsService } from '../../services/projects.service';
 import { splitWords } from '../../utils/textAnimation';
 
@@ -88,57 +90,40 @@ const breadcrumbsData = {
 
 function Project() {
   const { id } = useParams();
-  const [project, setProject] = useState();
+  const [project, setProject] = useState({});
+  const [otherProjects, setOtherProjects] = useState([]);
 
-  const {
-    isLoading,
-    data: response,
-    error,
-  } = useQuery(
-    ['project item', id], // уникальный ключ для запроса
-    () => ProjectsService.getProject(id),
-    {
-      onSuccess: ({ data }) => {
-        setProject(data[0]);
-      },
-      onError: (error) => {
-        console.log(error.message);
-      },
-    }
-  );
+  const { isLoading, projectData } = useGetProject(id);
+  const { areProjectsLoading, allProjectsData } = useGetAllProjects(id);
 
-  const { breadcrumbs, otherProjects } = breadcrumbsData;
+  const { breadcrumbs } = breadcrumbsData;
 
   const refToAnimate = useRef(null);
 
   // let otherProjects;
 
   useEffect(() => {
-    // splitWords(refToAnimate.current);
+    if (!!refToAnimate?.current) {
+      splitWords(refToAnimate.current);
+    }
   }, []);
 
   useEffect(() => {
-    // splitWords(refToAnimate.current);
-    console.log(!!response);
-
-    // if (!!response && response?.data[0]) {
-    //   let otherProjects = response?.data[0].map((item) => {
-    //     return {
-    //       id: item._id,
-    //       title: item.title,
-    //       backgroundImg: item.img,
-    //     };
-    //   });
-
-    //   console.log(otherProjects);
-    // }
-  }, [response]);
+    console.log(projectData);
+    if (!!projectData) {
+      setProject(projectData.data[0]);
+    }
+    console.log(allProjectsData);
+    if (!!allProjectsData) {
+      setOtherProjects(allProjectsData.data.projects);
+    }
+  }, [projectData, allProjectsData]);
 
   return (
     <>
       {isLoading ? (
         <p>Loading</p>
-      ) : response?.data?.length ? (
+      ) : !!project ? (
         <div className={styles.project}>
           <div
             className={styles.background}

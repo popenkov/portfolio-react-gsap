@@ -3,15 +3,15 @@ import { Link } from 'react-router-dom';
 import enter from '../../Assets/enter.svg';
 import styles from './ProjectItem.module.scss';
 
-function ProjectItem({ name, id, backgroundImg, page = 'projects' }) {
+function ProjectItem({ name, _id, img, page = 'projects' }) {
   return (
     <Link
-      to={id}
+      to={_id}
       className={clsx(styles.container, {
         [styles.home]: page === 'home',
         [styles.projects]: page === 'projects',
       })}
-      style={{ backgroundImage: `url("${backgroundImg}")` }}
+      style={{ backgroundImage: `url("${img}")` }}
     >
       <div className={styles.hover}>
         <img src={enter} className={styles.icon} />
