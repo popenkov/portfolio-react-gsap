@@ -22,7 +22,7 @@ const Header = () => {
 
   const timeline = gsap.timeline();
   useEffect(() => {
-    timeline.from([li1, li3, li4, li5], {
+    timeline.from([li1, li3, li4], {
       opacity: 0,
       duration: 1,
       delay: 0.2,
@@ -38,7 +38,6 @@ const Header = () => {
         <header className={styles.header}>
           <div id="logo" className={styles.logo}></div>
           <div className={styles.toggleMenu}>
-            {/* <img src={MenuIcon} alt="" /> */}
             <button type="button" className={styles.button} onClick={openModal}>
               <img src={MenuIcon} alt="" />
             </button>
@@ -59,11 +58,11 @@ const Header = () => {
                 Blog
               </Link>
             </li>
-            <li className={styles.menuItem} ref={(el) => (li5 = el)}>
+            {/* <li className={styles.menuItem} ref={(el) => (li5 = el)}>
               <Link to="/contacts" className={styles.menuItemLink}>
                 Contacts
               </Link>
-            </li>
+            </li> */}
           </ul>
         </header>
       </div>

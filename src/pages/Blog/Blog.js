@@ -34,7 +34,7 @@ function Blog() {
 
   return (
     <div>
-      <Header timeline={timeline_project} />
+      <Header />
       <div className="project-page">
         <div className="my-projects">
           <h1 ref={(el) => (text1 = el)}>

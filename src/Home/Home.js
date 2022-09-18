@@ -11,6 +11,7 @@ import SkillReel from '../components/SkillReel/SkillReel';
 import ProjectsLink from '../components/ProjectsLink/ProjectsLink';
 import Tags from '../components/TagCloud/TagCloud';
 import ProjectItem from '../components/ProjectItem/ProjectItem';
+import { useGetAllProjects } from '../hooks/useAllProjects';
 
 const data = [
   {
@@ -40,6 +41,7 @@ const data = [
 ];
 
 function Home() {
+  const { areProjectsLoading, allProjectsData } = useGetAllProjects();
   let text1 = useRef(null);
   let text2 = useRef(null);
   let text3 = useRef(null);
@@ -48,25 +50,29 @@ function Home() {
 
   const timeline_home = gsap.timeline();
   useEffect(() => {
-    timeline_home.from(
-      [text1, text2, text3, text4],
-      {
-        duration: 1,
-        skewY: 15,
-        y: 400,
-        stagger: {
-          amount: 0.2,
+    console.log(allProjectsData);
+    if (!!allProjectsData) {
+      timeline_home.from(
+        [text1, text2, text3, text4],
+        {
+          duration: 1,
+          skewY: 15,
+          y: 400,
+          stagger: {
+            amount: 0.2,
+          },
         },
-      },
-      '-=1.2'
-    );
-    timeline_home.from(p1, {
-      duration: 0.6,
-      x: -100,
-      delay: 0.2,
-      opacity: 0,
-    });
+        '-=1.2'
+      );
+      timeline_home.from(p1, {
+        duration: 0.6,
+        x: -100,
+        delay: 0.2,
+        opacity: 0,
+      });
+    }
   });
+
   return (
     <div className={styles.home}>
       <Header />
@@ -121,10 +127,10 @@ function Home() {
       <Skills />
       <ProjectsLink />
 
-      {data?.length > 0 && (
+      {allProjectsData?.data?.projects.length > 0 > 0 && (
         <div className={styles.projectsPreview}>
-          {data.map((item) => {
-            return <ProjectItem {...item} key={item.id} page="home" />;
+          {allProjectsData?.data?.projects.map((item) => {
+            return <ProjectItem {...item} key={item._id} page="home" />;
           })}
         </div>
       )}

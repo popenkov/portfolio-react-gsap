@@ -16,6 +16,7 @@ export const useGetProject = (id) => {
       onError: (error) => {
         console.log(error.message);
       },
+      enabled: !!id,
       //   select: ({ data }) => {
       //     console.log(data);
       //   },

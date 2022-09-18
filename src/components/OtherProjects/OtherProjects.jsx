@@ -31,7 +31,7 @@ function OtherProjects({ data, currentIndex }) {
             {projects.map((item) => {
               return (
                 <SwiperSlide>
-                  <ProjectItem {...item} key={item._id} />
+                  <ProjectItem {...item} key={item._id} page="home" />
                 </SwiperSlide>
               );
             })}
