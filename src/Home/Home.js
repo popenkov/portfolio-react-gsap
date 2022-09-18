@@ -48,11 +48,12 @@ function Home() {
   let text4 = useRef(null);
   let p1 = useRef(null);
 
-  const timeline_home = gsap.timeline();
+  const timeline_home = useRef();
+
   useEffect(() => {
-    console.log(allProjectsData);
-    if (!!allProjectsData) {
-      timeline_home.from(
+    timeline_home.current = gsap
+      .timeline()
+      .from(
         [text1, text2, text3, text4],
         {
           duration: 1,
@@ -63,15 +64,14 @@ function Home() {
           },
         },
         '-=1.2'
-      );
-      timeline_home.from(p1, {
+      )
+      .from(p1, {
         duration: 0.6,
         x: -100,
         delay: 0.2,
         opacity: 0,
       });
-    }
-  });
+  }, []);
 
   return (
     <div className={styles.home}>
@@ -88,10 +88,6 @@ function Home() {
               <p ref={(el) => (text2 = el)}>Popenkov</p>
             </div>
           </div>
-        </div>
-
-        <div className={styles.leftQuote}>
-          {/* <p ref={(el) => (p1 = el)}></p> */}
         </div>
 
         <div ref={(el) => (p1 = el)} className={styles.container}>

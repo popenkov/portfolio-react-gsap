@@ -10,6 +10,7 @@ import styles from './Projects.module.scss';
 import Header from '../../Header/Header';
 import { useGetAllProjects } from '../../hooks/useAllProjects';
 import { useIsomorphicLayoutEffect } from '../../hooks/useIsomorphicLayoutEffect';
+import Footer from '../../Footer/Footer';
 
 const data = [
   {
@@ -79,6 +80,7 @@ function Projects() {
             })}
         </div>
       </div>
+      <Footer />
     </div>
   );
 }

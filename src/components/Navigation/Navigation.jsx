@@ -11,9 +11,6 @@ function Navigation({ isOpen, onClose }) {
   let li2 = useRef(null);
   let li3 = useRef(null);
   let li4 = useRef(null);
-  let social1 = useRef(null);
-  let social2 = useRef(null);
-  let social3 = useRef(null);
 
   const tl_popup = useRef();
 

@@ -20,9 +20,11 @@ const Header = () => {
     setIsModalOpen(false);
   };
 
-  const timeline = gsap.timeline();
+  const timeline = useRef();
+
+  // const timeline = gsap.timeline();
   useEffect(() => {
-    timeline.from([li1, li3, li4], {
+    timeline.current = gsap.timeline().from([li1, li3, li4], {
       opacity: 0,
       duration: 1,
       delay: 0.2,
@@ -31,7 +33,7 @@ const Header = () => {
         amount: 0.6,
       },
     });
-  });
+  }, []);
   return (
     <>
       <div>

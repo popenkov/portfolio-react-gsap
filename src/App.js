@@ -13,6 +13,7 @@ import ScrollToTop from './ScrollToTop/ScrollToTop';
 import Project from './pages/Project/Project';
 import Post from './pages/Post/Post';
 import Blog from './pages/Blog/Blog';
+import Header from './Header/Header';
 
 function App() {
   const queryClient = new QueryClient({
@@ -126,6 +127,7 @@ function App() {
               </div>
             </div>
             <ScrollToTop />
+            <Header />
             <Routes>
               <Route index element={<Home />} />
               <Route path="/projects" element={<Projects />}></Route>
