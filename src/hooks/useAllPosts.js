@@ -1,7 +1,7 @@
 import { useQuery } from '@tanstack/react-query';
 import { BlogService } from '../services/blog.service';
 
-export const useGetAllProjects = () => {
+export const useGetAllPosts = () => {
   const {
     arePostsLoading,
     data: allBlogData,
@@ -12,6 +12,9 @@ export const useGetAllProjects = () => {
     {
       onError: (error) => {
         console.log(error.message);
+      },
+      select: ({ data }) => {
+        return Array.from(data.posts);
       },
     }
   );

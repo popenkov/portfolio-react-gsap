@@ -8,7 +8,7 @@ function Footer() {
       <div className={styles.footer}>
         <div className={styles.footerBottom}>
           <div className={styles.footerBottomLeft}>
-            <p>{now.getFullYear()} POPENKOV ANTON</p>
+            <p>2019-{now.getFullYear()} POPENKOV ANTON</p>
           </div>
           <div className={styles.footerBottomRight}>
             <a href="mailto:popenkovaa@yandex.ru" className={styles.socialLink}>

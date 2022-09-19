@@ -6,10 +6,11 @@ import Footer from '../../Footer/Footer';
 import gsap from 'gsap';
 import { Link } from 'react-router-dom';
 import ProjectPreview from '../../components/ProjectPreview/ProjectPreview';
-import { useGetAllProjects } from '../../hooks/useAllProjects';
+
+import { useGetAllPosts } from '../../hooks/useAllPosts';
 function Blog() {
-  const { arePostsLoading, allBlogData } = useGetAllProjects();
-  const timeline_project = useRef();
+  const { arePostsLoading, allBlogData } = useGetAllPosts();
+  const timeline_project = useRef(null);
   let text1 = useRef(null);
   let itemsProject = useRef(null);
 
@@ -37,49 +38,33 @@ function Blog() {
       });
   }, []);
 
-  // <ProjectPreview />
-  //         <ProjectPreview />
+  // <>
+  //   <ProjectPreview />
+  //   <ProjectPreview />
+  // </>;
 
-  // return (
-  //   <div>
-  //     <Header />
-  //     <div className={styles}>
-  //       <div className="my-projects">
-  //         <h1 ref={(el) => (text1 = el)}>
-  //           My <br />
-  //           blog
-  //         </h1>
-  //       </div>
-  //       <div className="project-page-container">
-  //         <div
-  //           className={styles.postsContainer}
-  //           ref={(el) => (itemsProject = el)}
-  //         >
-  //           <ProjectPreview />
-  //           <ProjectPreview />
-  //         </div>
-  //       </div>
-  //     </div>
-  //     <Footer />
-  //   </div>
-  // );
+  console.log(allBlogData);
 
   return (
-    <div className={styles.projects}>
+    <div>
       <Header />
-      <div className={styles.container}>
-        <h1 ref={(el) => (text1 = el)} className={styles.title}>
-          My <br />
-          blog
-        </h1>
-        <div
-          className={styles.projectsContainer}
-          ref={(el) => (itemsProject = el)}
-        >
-          {allBlogData?.data?.projects.length > 0 &&
-            allBlogData?.data?.projects.map((item) => {
-              return <ProjectPreview {...item} key={item._id} />;
-            })}
+      <div className={styles.blog}>
+        <div className={styles.blogContainer}>
+          <h1 ref={(el) => (text1 = el)}>
+            My <br />
+            blog
+          </h1>
+        </div>
+        <div className={styles.postsContainer}>
+          <div
+            className={styles.postsContainer}
+            ref={(el) => (itemsProject = el)}
+          >
+            {allBlogData?.length > 0 &&
+              allBlogData.map((item) => {
+                return <ProjectPreview {...item} key={item._id} />;
+              })}
+          </div>
         </div>
       </div>
       <Footer />

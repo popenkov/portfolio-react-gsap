@@ -1,4 +1,4 @@
-.my-projects {
+.blogContainer {
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -7,7 +7,7 @@
   height: 50vh;
   border-bottom: 1px dashed black;
 }
-.my-projects h1 {
+.blogContainer h1 {
   font-family: 'Ogg';
   font-size: 220px;
   font-weight: lighter;
@@ -18,7 +18,7 @@
   color: #642420;
   text-decoration: none;
 }
-.project-page-container {
+.postsContainer {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -98,10 +98,10 @@
 }
 
 @media (max-width: 900px) {
-  .my-projects {
+  .blogContainer {
     height: 40vh;
   }
-  .my-projects h1 {
+  .blogContainer h1 {
     font-size: 120px;
   }
   .project-page-item {
@@ -109,11 +109,11 @@
   }
 }
 @media (max-width: 500px) {
-  .my-projects {
+  .blogContainer {
     height: 30vh;
     margin-top: 100px;
   }
-  .my-projects h1 {
+  .blogContainer h1 {
     font-size: 80px;
   }
 
