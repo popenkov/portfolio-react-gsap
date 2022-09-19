@@ -9,7 +9,6 @@ function ProjectsLink() {
       <Link className={styles.projectsLink} to="/projects">
         All Projects and Works <img src={arrow} alt="" />
       </Link>
-      {/* <p>Кликни на ссылку</p> */}
     </div>
   );
 }

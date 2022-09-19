@@ -124,11 +124,14 @@ function Home() {
       <ProjectsLink />
 
       {allProjectsData?.data?.projects.length > 0 > 0 && (
-        <div className={styles.projectsPreview}>
-          {allProjectsData?.data?.projects.map((item) => {
-            return <ProjectItem {...item} key={item._id} page="home" />;
-          })}
-        </div>
+        <>
+          <p className={styles.recentProjects}>Последние проекты</p>
+          <div className={styles.projectsPreview}>
+            {allProjectsData?.data?.projects.map((item) => {
+              return <ProjectItem {...item} key={item._id} page="home" />;
+            })}
+          </div>
+        </>
       )}
 
       <Footer />

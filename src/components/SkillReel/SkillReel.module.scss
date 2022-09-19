@@ -6,6 +6,10 @@
   width: fit-content;
   will-change: transform;
   animation: animation-reel 60s infinite linear;
+
+  @media (max-width: 1200px) {
+    margin-top: 25vh;
+  }
 }
 
 @keyframes animation-reel {
