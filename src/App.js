@@ -16,6 +16,7 @@ import Post from './pages/Post/Post';
 import Blog from './pages/Blog/Blog';
 import Loader from './components/Loader/Loader';
 import CursorFollower from './components/CursorFollower/CursorFollower';
+import CV from './pages/CV/CV';
 
 function App() {
   const queryClient = new QueryClient({
@@ -43,6 +44,7 @@ function App() {
               <Route path="/blog" element={<Blog />}></Route>
               <Route path="/blog/:id" element={<Post />}></Route>
               <Route path="/contacts" element={<Contacts />}></Route>
+              <Route path="/cv" element={<CV />}></Route>
             </Routes>
             <CursorFollower />
             {/* <div

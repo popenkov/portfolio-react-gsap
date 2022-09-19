@@ -50,10 +50,6 @@ function Post() {
               backgroundImage: `url("${post.imageUrl}")`,
             }}
           >
-            {breadcrumbs?.length > 0 && (
-              <BreadCrumbs breadcrumbs={breadcrumbs} />
-            )}
-
             <h2 className={styles.title}>{post.title}</h2>
             {!!date && (
               <p className={styles.date}>

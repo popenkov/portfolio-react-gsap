@@ -15,7 +15,6 @@ function OtherProjects({ data, currentIndex }) {
     setProjects(projectsToDraw);
   }, [data]);
 
-  // return <h1>test</h1>;
   return (
     <>
       {projects?.length > 0 ? (

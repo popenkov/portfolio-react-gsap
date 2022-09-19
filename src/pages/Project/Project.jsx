@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import BreadCrumbs from '../../components/BreadCrumbs/BreadCrumbs';
 import OtherProjects from '../../components/OtherProjects/OtherProjects';
-import Footer from '../../Footer/Footer';
+import Footer from '../../components/Footer/Footer';
 import { useGetAllProjects } from '../../hooks/useAllProjects';
 import { useGetProject } from '../../hooks/useProject';
 import { splitWords } from '../../utils/textAnimation';

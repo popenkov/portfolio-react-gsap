@@ -10,8 +10,6 @@ function Navigation({ isOpen, onClose }) {
   let li1 = useRef(null);
   let li2 = useRef(null);
   let li3 = useRef(null);
-  let li4 = useRef(null);
-
   const tl_popup = useRef();
 
   useEffect(() => {
@@ -23,7 +21,7 @@ function Navigation({ isOpen, onClose }) {
         ease: Expo.easeInOut,
       })
       .fromTo(
-        [li1, li2, li3, li4],
+        [li1, li2, li3],
         {
           y: '-100%',
           autoAlpha: 0,
@@ -77,32 +75,8 @@ function Navigation({ isOpen, onClose }) {
                 Block
               </Link>
             </li>
-            <li ref={(el) => (li4 = el)} className={styles.navigationItem}>
-              <Link to="#" className={styles.navigationLink}>
-                Contact
-              </Link>
-            </li>
           </ul>
         </nav>
-        {/* <div className={styles.social}>
-          <ul className={styles.socialList}>
-            <li ref={(el) => (social1 = el)} className={styles.socialItem}>
-              <a href="#" className={styles.socialLink}>
-                facebook
-              </a>
-            </li>
-            <li ref={(el) => (social2 = el)} className={styles.socialItem}>
-              <a href="#" className={styles.socialLink}>
-                instagram
-              </a>
-            </li>
-            <li ref={(el) => (social3 = el)} className={styles.socialItem}>
-              <a href="#" className={styles.socialLink}>
-                twitter
-              </a>
-            </li>
-          </ul>
-        </div> */}
       </div>
     </>,
     document.body
