@@ -32,6 +32,7 @@
   }
 }
 .nameWrapper {
+  cursor: default;
   display: flex;
   flex-direction: column;
   padding: 0px 100px;
@@ -45,7 +46,6 @@
   text-transform: capitalize;
   letter-spacing: -10px;
   font-family: 'Ogg';
-  // overflow: hidden;
   height: 100%;
   line-height: 90%;
   line-height: 150%;

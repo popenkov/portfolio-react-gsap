@@ -1,0 +1,36 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 0;
+}
+body {
+  /* background-color: #e9dbd4; */
+  background-color: #1f1f26;
+  color: #c0c9df;
+}
+
+.app {
+  margin: 0;
+  padding: 0;
+  position: relative;
+  z-index: 1;
+}
+.noise::before {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  content: '';
+
+  opacity: 0.03;
+  z-index: 3500;
+  pointer-events: none;
+  background: url(./Assets/noise.gif);
+}
+::-webkit-scrollbar {
+  display: none;
+}

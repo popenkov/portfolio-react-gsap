@@ -1,0 +1,33 @@
+.cursorFollower {
+  position: absolute;
+  height: 70px;
+  width: 70px;
+  animation: animate-rotate 10s infinite linear;
+  z-index: 1500;
+  user-select: none;
+  opacity: 0.8;
+  mix-blend-mode: multiply;
+  overflow: hidden;
+  pointer-events: none;
+
+  width: 80px;
+  height: 80px;
+  border: 1px dashed white;
+  border: 2px dashed #d41145;
+  border-radius: 50%;
+  border-style: dashed;
+}
+@keyframes animate-rotate {
+  to {
+    transform: rotate(0deg);
+  }
+  from {
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 768px) {
+  .cursorFollower {
+    display: none;
+  }
+}
