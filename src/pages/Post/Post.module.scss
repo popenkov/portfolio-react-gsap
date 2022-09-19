@@ -37,7 +37,7 @@
   line-height: 13px;
   letter-spacing: 2.2px;
 
-  color: #ffffff;
+  color: #d41145;
 }
 
 .textContainer {
@@ -65,5 +65,29 @@
     margin: 60px 0;
     width: 100%;
     height: auto;
+  }
+}
+
+.backLink {
+  cursor: pointer;
+  position: absolute;
+  z-index: 12;
+  top: 30px;
+  left: 20px;
+  display: flex;
+  align-items: center;
+  color: #d41145;
+  text-decoration: none;
+}
+
+.backSvg {
+}
+
+.backText {
+  margin-left: 1rem;
+  text-transform: uppercase;
+
+  @media (max-width: 600px) {
+    display: none;
   }
 }

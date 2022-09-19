@@ -12,6 +12,5 @@ export const useGetPost = (id) => {
     },
     enabled: !!id,
   });
-  console.log('projectData', projectData);
   return { isLoading, postData };
 };

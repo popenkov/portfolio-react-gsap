@@ -1,6 +1,10 @@
-import { Link } from 'react-router-dom';
+import { useState, useEffect } from 'react';
+import { Link, useParams } from 'react-router-dom';
 import BreadCrumbs from '../../components/BreadCrumbs/BreadCrumbs';
+import Header from '../../components/Header/Header';
+import { useGetPost } from '../../hooks/useCurrentPost';
 import styles from './Post.module.scss';
+import { ArrowSvg } from '../../components/ui/icons';
 
 const data = {
   breadcrumbs: [
@@ -14,25 +18,58 @@ const data = {
 };
 
 function Post() {
-  const { breadcrumbs, img, title, date, text } = data;
-  return (
-    <div className={styles.container}>
-      <div
-        className={styles.background}
-        style={{
-          backgroundImage: `url("${img}")`,
-        }}
-      >
-        {breadcrumbs?.length > 0 && <BreadCrumbs breadcrumbs={breadcrumbs} />}
+  const { id } = useParams();
+  const [post, setPost] = useState({});
+  const [date, setDate] = useState(null);
+  const { breadcrumbs } = data;
+  const { isLoading, postData } = useGetPost(id);
 
-        <h2 className={styles.title}>{title}</h2>
-        <p className={styles.date}>{date}</p>
-      </div>
-      <div
-        className={styles.textContainer}
-        dangerouslySetInnerHTML={{ __html: text }}
-      ></div>
-    </div>
+  useEffect(() => {
+    console.log(id);
+    console.log(postData);
+    if (!!postData) {
+      setPost(postData.data);
+      setDate(new Date(post.createdAt));
+    }
+  }, [postData]);
+
+  return (
+    <>
+      {isLoading ? (
+        <p>Loading</p>
+      ) : !!post ? (
+        <div className={styles.container}>
+          <Link to={'/blog'} className={styles.backLink}>
+            <ArrowSvg className={styles.backSvg} />
+            <span className={styles.backText}>Go back</span>
+          </Link>
+          <Header />
+          <div
+            className={styles.background}
+            style={{
+              backgroundImage: `url("${post.imageUrl}")`,
+            }}
+          >
+            {breadcrumbs?.length > 0 && (
+              <BreadCrumbs breadcrumbs={breadcrumbs} />
+            )}
+
+            <h2 className={styles.title}>{post.title}</h2>
+            {!!date && (
+              <p className={styles.date}>
+                {date.toLocaleDateString().split('.').join('/')}
+              </p>
+            )}
+          </div>
+          <div
+            className={styles.textContainer}
+            dangerouslySetInnerHTML={{ __html: post.text }}
+          ></div>
+        </div>
+      ) : (
+        <p>Not found</p>
+      )}
+    </>
   );
 }
 

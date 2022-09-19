@@ -1,9 +1,8 @@
 import React, { useRef, useEffect } from 'react';
 import gsap from 'gsap';
-import Header from '../Header/Header';
+import Header from '../../components/Header/Header';
 import styles from './Contacts.module.scss';
-import Footer from '../Footer/Footer';
-import flower from '../Assets/flower.svg';
+import Footer from '../../components/Footer/Footer';
 
 function Contacts() {
   const timeline_contact = gsap.timeline();
@@ -29,7 +28,7 @@ function Contacts() {
       <div className={styles.contacts}>
         <div className={styles.container}>
           <h1 ref={(el) => (text1 = el)}>
-            Let's talk about <br /> the project? <img src={flower} alt="" />
+            Let's talk about <br /> the project?
           </h1>
         </div>
       </div>

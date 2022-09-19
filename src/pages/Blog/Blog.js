@@ -1,10 +1,9 @@
 import React, { useEffect, useRef } from 'react';
-import Header from '../../Header/Header';
+import Header from '../../components/Header/Header';
 import styles from './Blog.module.scss';
 import arrow from '../../Assets/arrow.svg';
-import Footer from '../../Footer/Footer';
+import Footer from '../../components/Footer/Footer';
 import gsap from 'gsap';
-import { Link } from 'react-router-dom';
 import ProjectPreview from '../../components/ProjectPreview/ProjectPreview';
 
 import { useGetAllPosts } from '../../hooks/useAllPosts';
@@ -37,13 +36,6 @@ function Blog() {
         y: 100,
       });
   }, []);
-
-  // <>
-  //   <ProjectPreview />
-  //   <ProjectPreview />
-  // </>;
-
-  console.log(allBlogData);
 
   return (
     <div>

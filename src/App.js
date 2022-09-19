@@ -6,14 +6,14 @@ import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import 'swiper/css';
 
 import styles from './App.module.scss';
-import Home from './Home/Home';
+
+import Home from './pages/Home/Home';
 import Projects from './pages/Projects/Projects';
-import Contacts from './Contacts/Contacts';
-import ScrollToTop from './ScrollToTop/ScrollToTop';
+import Contacts from './pages/Contacts/Contacts';
+import ScrollToTop from './components/ScrollToTop/ScrollToTop';
 import Project from './pages/Project/Project';
 import Post from './pages/Post/Post';
 import Blog from './pages/Blog/Blog';
-import Header from './Header/Header';
 import Loader from './components/Loader/Loader';
 import CursorFollower from './components/CursorFollower/CursorFollower';
 
@@ -35,7 +35,7 @@ function App() {
             <Loader />
 
             <ScrollToTop />
-            <Header />
+            {/* <Header /> */}
             <Routes>
               <Route index element={<Home />} />
               <Route path="/projects" element={<Projects />}></Route>

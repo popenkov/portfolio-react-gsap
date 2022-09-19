@@ -2,8 +2,8 @@ import gsap from 'gsap';
 import { useRef, useEffect, useState, createContext, useContext } from 'react';
 import styles from './Header.module.scss';
 import { Link } from 'react-router-dom';
-import MenuIcon from '../Assets/menu.svg';
-import Navigation from '../components/Navigation/Navigation';
+import MenuIcon from '../../Assets/menu.svg';
+import Navigation from '../Navigation/Navigation';
 
 const Header = () => {
   // const [isOpen, setIsOpen] = useNavigation();

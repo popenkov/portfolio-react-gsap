@@ -1,13 +1,11 @@
 import { useRef, useEffect, useState } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-// import { ScrollSmoother } from 'gsap-trial/dist//ScrollSmoother';
-// import { ScrollTrigger, ScrollSmoother } from 'gsap';
 
 import { SmootherContext } from '../../context/SmootherContext';
 import ProjectItem from '../../components/ProjectItem/ProjectItem';
 import styles from './Projects.module.scss';
-import Header from '../../Header/Header';
+import Header from '../../components/Header/Header';
 import { useGetAllProjects } from '../../hooks/useAllProjects';
 import { useIsomorphicLayoutEffect } from '../../hooks/useIsomorphicLayoutEffect';
 import Footer from '../../Footer/Footer';
