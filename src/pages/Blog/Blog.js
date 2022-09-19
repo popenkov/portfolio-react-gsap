@@ -62,7 +62,14 @@ function Blog() {
           >
             {allBlogData?.length > 0 &&
               allBlogData.map((item) => {
-                return <ProjectPreview {...item} key={item._id} />;
+                return (
+                  <>
+                    <ProjectPreview {...item} key={item._id} />
+                    <ProjectPreview {...item} key={item._id} />
+                    <ProjectPreview {...item} key={item._id} />
+                    <ProjectPreview {...item} key={item._id} />
+                  </>
+                );
               })}
           </div>
         </div>

@@ -7,13 +7,28 @@
 }
 
 .title {
-  position: relative;
-  width: 860px;
+  // position: relative;
+  // // width: 860px;
+  // font-family: 'Ogg';
+  // font-size: 80px;
+  // text-transform: uppercase;
+  // text-decoration: underline 0.5px;
+  // font-weight: lighter;
+
+  width: 100%;
   font-family: 'Ogg';
-  font-size: 80px;
-  text-transform: uppercase;
-  text-decoration: underline 0.5px;
+  margin-left: 40px;
+  font-size: 220px;
   font-weight: lighter;
+  line-height: 80%;
+  text-transform: capitalize;
+
+  @media (max-width: 900px) {
+    font-size: 120px;
+  }
+  @media (max-width: 500px) {
+    font-size: 80px;
+  }
 }
 
 .projectsContainer {

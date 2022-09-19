@@ -1,14 +1,21 @@
+.blog {
+  max-width: 1400px;
+  width: 100%;
+  margin: 0 auto;
+}
+
 .blogContainer {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  margin-left: 5vw;
-  margin-right: 5vw;
+  // margin-left: 5vw;
+  // margin-right: 5vw;
   height: 50vh;
   border-bottom: 1px dashed black;
 }
 .blogContainer h1 {
   font-family: 'Ogg';
+  margin-left: 20px;
   font-size: 220px;
   font-weight: lighter;
   line-height: 80%;
@@ -20,10 +27,16 @@
 }
 .postsContainer {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
-  justify-content: center;
+  // justify-content: center;
   width: 100%;
-  height: fit-content;
+  // max-width: 1200px;
+  margin: 0 auto;
+  // margin: -20px;
+  margin-top: 60px;
+
+  // height: fit-content;
 }
 .project-page-items {
   display: flex;

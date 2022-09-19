@@ -1,22 +1,25 @@
 .project {
-  padding: 100px;
-  width: 400px;
+  width: calc(100% / 3 - 40px);
+  margin: 20px;
   transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 
   @media (max-width: 900px) {
-    padding: 50px;
+    width: calc(100% / 2 - 40px);
   }
 
   @media (max-width: 500px) {
-    height: 300px;
+    width: 100%;
+    margin-bottom: 40px;
   }
 }
 .project:hover {
   transform: scale(1.05);
 }
-.projectNumber {
+.date {
+  color: #fff;
   font-size: 10px;
   font-weight: 500;
+  text-decoration: none;
 }
 .header {
   display: flex;
@@ -24,18 +27,15 @@
   align-items: baseline;
   justify-content: space-between;
 }
-.header h1 {
+.title {
+  color: #fff;
   font-size: 15px;
   font-weight: bold;
   width: 50%;
   text-transform: uppercase;
+  text-decoration: none;
 }
-.header p {
-  font-size: 10px;
-  font-weight: 500;
-  width: 50%;
-  text-transform: uppercase;
-}
+
 .img {
   width: 100%;
   height: 400px;
@@ -55,7 +55,8 @@
   border-bottom: 1px dashed black;
   padding: 10px 0px;
 }
-.footer p {
+.footerText {
+  color: #fff;
   font-size: 12px;
   font-weight: 400;
   text-transform: uppercase;

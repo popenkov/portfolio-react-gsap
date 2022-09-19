@@ -74,7 +74,7 @@ function Projects() {
       <div ref={containerRef} className={styles.container}>
         <h1 className={styles.title}>Projects:</h1>
         <div className={styles.projectsContainer}>
-          {allProjectsData?.data?.projects.length > 0 &&
+          {allProjectsData?.data?.projects?.length > 0 &&
             allProjectsData?.data?.projects.map((item) => {
               return <ProjectItem {...item} key={item._id} />;
             })}
