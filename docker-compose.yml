@@ -4,16 +4,17 @@ services:
     build: ./api
     ports:
       - '4444:4444'
-    depends_on:
-      - db
     container_name: portfolio-api
   client:
     build: ./client
     ports:
       - '3000:3000'
     container_name: portfolio-client
-  db:
-    image: mongo
+  nginx:
+    image: erangaeb/senznginx:0.4
+    container_name: nginx
     ports:
-      - '27017:27017'
-    container_name: portfolio-db
+      - 80:80
+      - 443:443
+    links:
+      - portfolio-client
