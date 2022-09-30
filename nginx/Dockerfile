@@ -18,5 +18,5 @@ EXPOSE 80 443
 # add nginx conf
 ADD config/nginx.conf /etc/nginx/conf.d/default.conf
 WORKDIR /etc/nginx
-RUN sed '/sites-enabled/d' /etc/nginx/nginx.conf
+RUN rm  -r /etc/nginx/sites-enabled
 CMD ["nginx"]
