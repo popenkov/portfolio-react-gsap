@@ -11,6 +11,8 @@ services:
       - '3000:3000'
     container_name: portfolio-client
   nginx:
-    image: erangaeb/senznginx:0.4
+    image: nginx:1.23.1-alpine
     container_name: nginx
     network_mode: host
+    volumes:
+       - '/root/portfolio-react-gsap/nginx/config:/etc/nginx/conf.d'
