@@ -20,3 +20,8 @@ ADD config/nginx.conf /etc/nginx/conf.d/default.conf
 WORKDIR /etc/nginx
 RUN rm  -r /etc/nginx/sites-enabled
 CMD ["nginx"]
+
+
+# FROM nginx:1.23.1-alpine
+# ADD ./config/nginx.conf  /etc/nginx/conf.d/myproject.conf
+# CMD ["nginx"]
