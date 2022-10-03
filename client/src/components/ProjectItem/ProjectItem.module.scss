@@ -140,6 +140,39 @@
   }
 }
 
+.otherProjects {
+  &.container {
+    width: 100%;
+    padding: 3rem 0 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+  }
+
+  .textContainer {
+    max-width: 400px;
+    text-align: center;
+  }
+
+  .title {
+    position: static;
+    font-style: normal;
+    margin-bottom: 50px;
+    line-height: 88%;
+  }
+
+  .preview {
+    color: white;
+    margin: -2.5rem auto 0;
+  }
+
+  .hover {
+    display: none;
+  }
+}
+
 @media (max-width: 900px) {
   .home.container {
     width: 100%;

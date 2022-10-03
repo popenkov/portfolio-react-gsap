@@ -19,7 +19,7 @@ function OtherProjects({ data, currentIndex }) {
     <>
       {projects?.length > 0 ? (
         <div className={styles.container}>
-          <h3>Мои другие проекты:</h3>
+          <h3>My other projects:</h3>
           <Swiper
             spaceBetween={50}
             slidesPerView={isMobile ? 2 : 3}
@@ -30,7 +30,7 @@ function OtherProjects({ data, currentIndex }) {
             {projects.map((item) => {
               return (
                 <SwiperSlide>
-                  <ProjectItem {...item} key={item._id} page="home" />
+                  <ProjectItem {...item} key={item._id} page="otherProjects" />
                 </SwiperSlide>
               );
             })}
