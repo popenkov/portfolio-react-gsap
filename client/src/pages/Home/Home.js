@@ -5,7 +5,6 @@ import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
 import gsap from 'gsap';
 import Skills from '../../components/Skills/Skills';
-import Navigation from '../../components/Navigation/Navigation';
 import clsx from 'clsx';
 import SkillReel from '../../components/SkillReel/SkillReel';
 import ProjectsLink from '../../components/ProjectsLink/ProjectsLink';
@@ -83,11 +82,12 @@ function Home() {
         <h2 className={styles.aboutHeader}>Hello, world!</h2>
         <div className={styles.aboutTextContainer}>
           <p className={styles.aboutText}>
-            <span className={styles.aboutIntro}>Кто я такой</span>
-            Меня зовут Антон, я фронтенд-разработчик из города Владимир. Обожаю
-            создавать и видеть свои работы на просторах интернета 🌍 Интересуюсь
-            разработкой на JavaScript и TypeScript, особенно на фреймворках
-            React и Next.js. Буду рад общению и обратной связи.
+            <span className={styles.aboutIntro}>WHO AM I?</span>
+            My name is Anton, I'm a front-end developer. I love to create and
+            and show my works to the whole world in the Internet🌍 I'm
+            interested in JavaScript and TypeScript development, especially
+            React and Next.js frameworks. I will be glad to communicate and
+            receive your feedback.
           </p>
         </div>
       </div>
@@ -96,9 +96,9 @@ function Home() {
       <Skills />
       <ProjectsLink />
 
-      {allProjectsData?.data?.projects.length > 0 > 0 && (
+      {allProjectsData?.data?.projects?.length > 0 > 0 && (
         <>
-          <p className={styles.recentProjects}>Последние проекты</p>
+          <p className={styles.recentProjects}>My recent projects</p>
           <div className={styles.projectsPreview}>
             {allProjectsData?.data?.projects.map((item) => {
               return <ProjectItem {...item} key={item._id} page="home" />;

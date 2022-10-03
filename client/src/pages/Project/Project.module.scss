@@ -63,9 +63,8 @@
 
   height: auto;
   max-height: 400px;
+  object-fit: contain;
   // margin-left: auto;
-
-  object-fit: cover;
   object-position: center;
 }
 

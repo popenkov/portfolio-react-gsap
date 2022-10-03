@@ -55,7 +55,10 @@ function Project() {
             <span className={styles.backText}>Go back</span>
           </Link>
           <div className={styles.container}>
-            <img src={project.img} className={styles.img} />
+            <img
+              src={'http://localhost:4444' + project.img}
+              className={styles.img}
+            />
             <div className={styles.textContainer}>
               <div className="content__group">
                 <h2 className={styles.title}> {project.title}</h2>

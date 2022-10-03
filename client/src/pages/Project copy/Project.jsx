@@ -51,7 +51,9 @@ function Project() {
         <div className={styles.project}>
           <div
             className={styles.background}
-            style={{ backgroundImage: `url(${project.img})` }}
+            style={{
+              backgroundImage: `url(http://localhost:4444${project.img})`,
+            }}
           >
             <div className={styles.container}>
               <BreadCrumbs breadcrumbs={breadcrumbs} />

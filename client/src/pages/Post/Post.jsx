@@ -47,7 +47,7 @@ function Post() {
           <div
             className={styles.background}
             style={{
-              backgroundImage: `url("${post.imageUrl}")`,
+              backgroundImage: `url("http://localhost:4444${post.imageUrl}")`,
             }}
           >
             <h2 className={styles.title}>{post.title}</h2>

@@ -11,7 +11,7 @@ function ProjectItem({ title, _id, img, preview, page = 'projects' }) {
         [styles.home]: page === 'home',
         [styles.projects]: page === 'projects',
       })}
-      style={{ backgroundImage: `url("${img}")` }}
+      style={{ backgroundImage: `url("http://localhost:4444${img}")` }}
     >
       <div className={styles.hover}>
         <img src={enter} className={styles.icon} />

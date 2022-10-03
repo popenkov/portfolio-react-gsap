@@ -72,7 +72,7 @@ function Navigation({ isOpen, onClose }) {
             </li>
             <li ref={(el) => (li3 = el)} className={styles.navigationItem}>
               <Link to="/blog" className={styles.navigationLink}>
-                Block
+                Blog
               </Link>
             </li>
           </ul>
