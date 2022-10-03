@@ -91,15 +91,13 @@ function Project() {
             )}
             {project.role && (
               <div className={styles.role}>
-                <p className={styles.roleTitle}>Моя роль:</p>
+                <p className={styles.roleTitle}>My role:</p>
                 <p className={styles.roleText}>{project.role}</p>
               </div>
             )}
             {project.tags && (
               <div className={styles.technologoies}>
-                <p className={styles.technologoiesTitle}>
-                  Используемые технологии:
-                </p>
+                <p className={styles.technologoiesTitle}>Technologoies:</p>
                 <div className={styles.technologoiesTags}>
                   {project.tags.map((item, index) => {
                     return (

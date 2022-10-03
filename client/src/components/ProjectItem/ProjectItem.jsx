@@ -11,7 +11,9 @@ function ProjectItem({ title, _id, img, preview, page = 'projects' }) {
         [styles.home]: page === 'home',
         [styles.projects]: page === 'projects',
       })}
-      style={{ backgroundImage: `url("http://localhost:4444${img}")` }}
+      style={{
+        backgroundImage: `linear-gradient(1turn,rgba(31, 31, 38, .2) 15.95%,rgba(31, 31, 38, .3) 63.1%), url("http://localhost:4444${img}") `,
+      }}
     >
       <div className={styles.hover}>
         <img src={enter} className={styles.icon} />
