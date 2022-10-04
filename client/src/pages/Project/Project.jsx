@@ -56,7 +56,7 @@ function Project() {
           </Link>
           <div className={styles.container}>
             <img
-              src={'http://localhost:4444' + project.img}
+              src={'http://popenkov.site' + project.img}
               className={styles.img}
             />
             <div className={styles.textContainer}>

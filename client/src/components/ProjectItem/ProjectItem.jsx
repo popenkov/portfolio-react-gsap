@@ -13,7 +13,7 @@ function ProjectItem({ title, _id, img, preview, page = 'projects' }) {
         [styles.otherProjects]: page === 'otherProjects',
       })}
       style={{
-        backgroundImage: `linear-gradient(1turn,rgba(31, 31, 38, .2) 15.95%,rgba(31, 31, 38, .3) 63.1%), url("http://localhost:4444${img}") `,
+        backgroundImage: `linear-gradient(1turn,rgba(31, 31, 38, .2) 15.95%,rgba(31, 31, 38, .3) 63.1%), url("http://popenkov.site${img}") `,
       }}
     >
       <div className={styles.hover}>

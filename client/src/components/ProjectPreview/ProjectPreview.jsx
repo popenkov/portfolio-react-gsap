@@ -19,7 +19,7 @@ function ProjectPreview({ _id, title, tags, createdAt, viewsCount, imageUrl }) {
       </div>
       <div
         className={styles.img}
-        style={{ backgroundImage: `url(http://localhost:4444/{imageUrl})` }}
+        style={{ backgroundImage: `url(http://popenkov.site/{imageUrl})` }}
       ></div>
       <div className={styles.footer}>
         <p className={styles.footerText}>Читать полностью</p>

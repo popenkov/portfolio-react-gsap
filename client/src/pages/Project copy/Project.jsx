@@ -52,7 +52,7 @@ function Project() {
           <div
             className={styles.background}
             style={{
-              backgroundImage: `url(http://localhost:4444${project.img})`,
+              backgroundImage: `url(http://popenkov.site${project.img})`,
             }}
           >
             <div className={styles.container}>
