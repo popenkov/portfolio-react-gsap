@@ -47,14 +47,10 @@ function App() {
               <Route path="/cv" element={<CV />}></Route>
             </Routes>
             <CursorFollower />
-            {/* <div
-              className={styles.cursorFollower}
-              ref={(el) => (cursor = el)}
-            ></div> */}
           </div>
         </Router>
       </div>
-      <ReactQueryDevtools initialIsOpen={false} />
+      {/* <ReactQueryDevtools initialIsOpen={false} /> */}
     </QueryClientProvider>
   );
 }
